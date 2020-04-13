@@ -26,7 +26,7 @@
                 <p>Ce site web propose une ambiance musicale pendant les calculs, souhaitez vous l'activer? Vous pouvez également proposer vos musiques.</p> <!-- Le paragraphe de la div ambiance -->
                 <button class="petitbouton Activer" id="declencheur1" type="button" name="Activer" onclick="playAudio()">Activer</button> <!-- Bouton Activer quand on clique dessus déclenche l'évènement Activer et sur le bouton est écrit Activer -->
                 <button class="petitbouton" type="button" name="ActiverMesMusiques" id="ActiverMesMusiques" onclick="ActiverMesMusiques()">Activer mes musiques</button> <!-- Bouton ActiverMesMusiques quand on clique dessus déclénche l'évènement ActiverMesMusiques et sur le bouton est écrit Activer Mes Musiques -->
-                <button class="petitbouton" type="button" id="declencheur2" name="JeNenVeuxPas" >Je N'en Veux Pas</button> <!-- Bouton JeN'enVeuxPas quand on clique dessus déclénche l'évènement JeN'enVeuxPas et sur le bouton est écrit JeN'enVeuxPas -->
+                <button class="petitbouton" type="button" id="declencheur2" name="JeNenVeuxPas">Je N'en Veux Pas</button> <!-- Bouton JeN'enVeuxPas quand on clique dessus déclénche l'évènement JeN'enVeuxPas et sur le bouton est écrit JeN'enVeuxPas -->
             </div>
 
 
@@ -116,7 +116,7 @@
 
             <h3>Réponse:</h3>
             <!--La partie écrite réponse -->
-            <input onKeyPress="if (event.keyCode == 13) mafonction()" type="text" id="texte" /> <!-- La zone où on peut écrire nôtre réponse à l'intérieur-->
+            <input onKeyPress="if (event.keyCode == 13) entreeToCheck()" type="text" id="texte" /> <!-- La zone où on peut écrire nôtre réponse à l'intérieur-->
             <button id="check" name="check">Check</button> <!-- Le bouton pour vérifier la réponse et qui répond par vrai ou faux -->
 
             <h2> Vérification de la réponse:</h2> <!-- la zone de vérification de la réponse -->
@@ -147,6 +147,7 @@
     <script src="../javascript/chronometreeasy.js"></script> <!-- Le lien vers la partie chronomètre -->
     <script src="../javascript/calcul.js"></script> <!-- Le lien javascript vers la partie calcul -->
     <script src="../javascript/musique.js"></script> <!-- Le lien javascript vers la partie musique -->
+
 
 </body> <!-- Fin du code du corps du site -->
 
