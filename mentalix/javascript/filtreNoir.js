@@ -209,3 +209,12 @@ finPauseMentale.addEventListener("click", function () {
 
     //  pauseMentale.
 });
+
+
+
+
+
+
+
+
+
