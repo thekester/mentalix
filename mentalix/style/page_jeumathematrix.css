@@ -1,0 +1,110 @@
+body {
+    color: black;
+    /* La couleur est noir*/
+    background-color: white;
+    /* La couleur de l'arrière plan est blanc */
+    background-image: url(../Images/Fond_orange.jpg);
+    background-repeat: repeat;
+    /* On répète l'image */
+    border: 2em;
+    text-align: center;
+
+
+}
+
+header {}
+
+h1 {
+    text-align: center;
+    /* On aligne le texte au centre */
+    position: relative;
+    /* top: 2em;  */
+}
+
+section {
+    background-color: white;
+    /* Le fond de couleur est blanc */
+    margin: 10%;
+}
+
+.tourne {
+    transform: rotate(180deg);
+    /* Équivalent à rotateZ(180deg) */
+    transform: scaleX(-1);
+    /*On inverse l'image */
+    width: 150px;
+    /* Sa largeur est de 15% */
+    /* height:15%; /* Sa hauteur est de 15% */
+    float: left;
+    /*   vertical-align: top;   */
+}
+
+#haut {
+    display: flex;
+    justify-content: space-between;
+}
+
+#confirmerTout
+{
+    
+    width: 20%;
+    margin-left: 40%;
+    
+}
+
+.filtrenoir {
+    color: white;
+    /*Pour que le texte s'affiche en blanc car on est sur un fond noir*/
+    width: 100%;
+    /* Occupe toute la largeur de l'écran*/
+    height: 100%;
+    /* Occupe toute la hauteur de l'écran*/
+    background-color: #000000;
+    /* Fond noir*/
+    top: 0;
+    /* Pour prendre toute le haut */
+    left: 0;
+    /* Pour prendre tout le bas*/
+    z-index: 20;
+    /* Pour apparaitre au premier plan*/
+    opacity: 0.8;
+    /* On défini le degré de transparence à 0.8*/
+    text-align: center;
+    /* On met le texte au centre */
+    position: absolute;
+    display: flex;
+    /* Pour utiliser flex */
+    margin: auto;
+    flex-direction: column;
+    /* direction d'affichage verticale */
+    justify-content: center;
+    /* alignement vertical */
+    padding-bottom: 100%;
+
+
+}
+
+.petitbouton {
+    width: 20%;
+    margin-left: 40%;
+}
+
+.hautedroite {
+    /* Pour mettre des truics en haut à droite de la section ne marche pas */
+    display: block;
+    text-align: right;
+    position: relative;
+    top: 0;
+    right: 0;
+}
+
+#check {
+
+    margin: auto;
+}
+
+.calculSuivant {
+
+    margin: auto;
+
+}
