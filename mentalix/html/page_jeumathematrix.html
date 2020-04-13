@@ -1,366 +1,1689 @@
-<!DOCTYPE html> <!--On dit à l'ordinateur qu'n lui parle en html et non pas en chinois -->
-<html lang="fr"> <!-- On dit à l'ordinateur que notre page web est en français -->
-	<head> <!-- Début du code de l'entête -->
-		<title> Aplication Mathematrix</title>
-		<meta charset="UTF-8"> <!-- On dit à l'ordinateur qu'il sait comment interpréter les caractères spéciaux-->
-		<link rel="stylesheet"  href="../style/page_jeumathematrix.css" type="text/css"> <!-- Le lien vers le css -->
-	</head> <!-- Fin du code de l'en tête -->
+<!DOCTYPE html>
+<!--On dit à l'ordinateur qu'n lui parle en html et non pas en chinois -->
+<html lang="fr">
+<!-- On dit à l'ordinateur que notre page web est en français -->
 
-	<body> <!-- Le corps du site -->
-		<section> <!-- Début du code de la partie du site excepté la bordure, ce qu'il y a en haut et en bas -->
+<head>
+    <!-- Début du code de l'entête -->
+    <title> Aplication Mathematrix</title>
+    <meta charset="UTF-8"> <!-- On dit à l'ordinateur qu'il sait comment interpréter les caractères spéciaux-->
+    <link rel="stylesheet" href="../style/page_jeumathematrix.css" type="text/css"> <!-- Le lien vers le css -->
+</head> <!-- Fin du code de l'en tête -->
 
-			<article> <!-- Début du code de la partie du site excepté la bordure, ce qu'il y a en haut et en bas-->
+<body>
+    <!-- Le corps du site -->
+    <section>
+        <!-- Début du code de la partie du site excepté la bordure, ce qu'il y a en haut et en bas -->
 
-				
-				
-				<div id="ambiance" class="filtrenoir"  > 
-				<h2> Ambiance Mathématique</h2> <!-- Le titre de la div ambiance -->
-				<p>Ce site web propose une ambiance musicale pendant les calculs, souhaitez vous l'activer? Vous pouvez également proposer vos musiques.</p> <!-- Le paragraphe de la div ambiance -->
-				<button class="petitbouton Activer" id="declencheur1" type="button" name="Activer" onclick="playAudio()">Activer</button> <!-- Bouton Activer quand on clique dessus déclenche l'évènement Activer et sur le bouton est écrit Activer -->
-				<button class="petitbouton" type="button"  name="ActiverMesMusiques" id="ActiverMesMusiques" onclick="ActiverMesMusiques()">Activer mes musiques</button> <!-- Bouton ActiverMesMusiques quand on clique dessus déclénche l'évènement ActiverMesMusiques et sur le bouton est écrit Activer Mes Musiques -->
-				<button class="petitbouton" type="button" id="declencheur2"  name="JeNenVeuxPas" id="JeNenVeuxPas" onclick="JeNenVeuxPas()">Je N'en Veux Pas</button> <!-- Bouton JeN'enVeuxPas quand on clique dessus déclénche l'évènement JeN'enVeuxPas et sur le bouton est écrit JeN'enVeuxPas -->
-				</div>
+        <article>
+            <!-- Début du code de la partie du site excepté la bordure, ce qu'il y a en haut et en bas-->
 
 
-				<div id="CompteOuPas" class="filtrenoir">
-					<p>Avez vous un compte?</p>
-					<button class="petitbouton" type="button" name="Compte" id="Compte" onclick="Compte()">Oui, j'ai un compte</button> <!-- Bouton Activer quand on clique dessus déclénche l'évènement Activer et sur le bouton est écrit Activer -->
-					<button class="petitbouton" type="button" name="PasDeompte" id="PasDeCompte" onclick="PasDeCompte()">Non, je n'ai pas de compte</button> <!-- Bouton Activer quand on clique dessus déclénche l'évènement Activer et sur le bouton est écrit Activer -->	
-				</div>
 
-				<div id="OuiCompte" class="filtrenoir">
-				<p>Si vous avez un compte alors les musiques seront joués dans l'ordre affiché de la playlist du compte. Si vous voulez modifier les musiques de la playlist connecter vous à votre compte </p>
-				</div>
+            <div id="ambiance" class="filtrenoir">
+                <h2> Ambiance Mathématique</h2> <!-- Le titre de la div ambiance -->
+                <p>Ce site web propose une ambiance musicale pendant les calculs, souhaitez vous l'activer? Vous pouvez également proposer vos musiques.</p> <!-- Le paragraphe de la div ambiance -->
+                <button class="petitbouton Activer" id="declencheur1" type="button" name="Activer" onclick="playAudio()">Activer</button> <!-- Bouton Activer quand on clique dessus déclenche l'évènement Activer et sur le bouton est écrit Activer -->
+                <button class="petitbouton" type="button" name="ActiverMesMusiques" id="ActiverMesMusiques" onclick="ActiverMesMusiques()">Activer mes musiques</button> <!-- Bouton ActiverMesMusiques quand on clique dessus déclénche l'évènement ActiverMesMusiques et sur le bouton est écrit Activer Mes Musiques -->
+                <button class="petitbouton" type="button" id="declencheur2" name="JeNenVeuxPas" id="JeNenVeuxPas" onclick="JeNenVeuxPas()">Je N'en Veux Pas</button> <!-- Bouton JeN'enVeuxPas quand on clique dessus déclénche l'évènement JeN'enVeuxPas et sur le bouton est écrit JeN'enVeuxPas -->
+            </div>
 
 
-				<div id="PasCompte" class="filtrenoir">
-				<p>C'est votre choix. Nous vous prévenons juste que vous pouvez afficher vos playlist sur le compte mais c'est vous qui décider si oui ou non vous voulez vous créer un compte.</p>
-				<p>Donner ci-dessous le lien internet de vos musiques dans l'ordre que vous voulez: La première musique dans le premier champ sera la première à être joué et ainsi de suite</p>
-				<form action="#" method="get" class="form-example">
-					<!-- On envoie le formulaire dans la page web elle même -->
-					
-					<ul id="musicList"> <!-- Début de la zone des musiques -->
-					
-					
-					<li class="Musique1"> <!-- La ligne concernant la musique 1 -->
-						 <span> Entrer la musique1 </span> 
-						 <input type="file" name="PremiereMusique" id="zonesaisiemusique1" multiple required> 	
-						 <button  type="button"  name="Confirmer1" id="Confirmer" >ConfirmerMusique1</button> <!-- Bouton Confirmer1 quand on clique dessus on confirme la première musique -->	
-					<button  type="button" name="MusiqueSuivante" id="MusiqueSuivante" >MusiqueSuivante</button> <!-- Bouton Muisque suivante quand on clique dessus on passe à la première musique suivante -->	 
-                        
-                        
+            <div id="CompteOuPas" class="filtrenoir">
+                <p>Avez vous un compte?</p>
+                <button class="petitbouton" type="button" name="Compte" id="Compte" onclick="Compte()">Oui, j'ai un compte</button> <!-- Bouton Activer quand on clique dessus déclénche l'évènement Activer et sur le bouton est écrit Activer -->
+                <button class="petitbouton" type="button" name="PasDeompte" id="PasDeCompte" onclick="PasDeCompte()">Non, je n'ai pas de compte</button> <!-- Bouton Activer quand on clique dessus déclénche l'évènement Activer et sur le bouton est écrit Activer -->
+            </div>
+
+            <div id="OuiCompte" class="filtrenoir">
+                <p>Si vous avez un compte alors les musiques seront joués dans l'ordre affiché de la playlist du compte. Si vous voulez modifier les musiques de la playlist connecter vous à votre compte </p>
+            </div>
+
+
+            <div id="PasCompte" class="filtrenoir">
+                <p>C'est votre choix. Nous vous prévenons juste que vous pouvez afficher vos playlist sur le compte mais c'est vous qui décider si oui ou non vous voulez vous créer un compte.</p>
+                <p>Donner ci-dessous le lien internet de vos musiques dans l'ordre que vous voulez: La première musique dans le premier champ sera la première à être joué et ainsi de suite</p>
+                <form action="#" method="get" class="form-example">
+                    <!-- On envoie le formulaire dans la page web elle même -->
+
+                    <ul id="musicList">
+                        <!-- Début de la zone des musiques -->
+
+
+                        <li class="Musique1">
+                            <!-- La ligne concernant la musique 1 -->
+                            <span> Entrer la musique1 </span>
+                            <input type="file" name="PremiereMusique" id="zonesaisiemusique1" multiple required>
+                            <button type="button" name="Confirmer1" id="Confirmer">ConfirmerMusique1</button> <!-- Bouton Confirmer1 quand on clique dessus on confirme la première musique -->
+                            <button type="button" name="MusiqueSuivante" id="MusiqueSuivante">MusiqueSuivante</button> <!-- Bouton Muisque suivante quand on clique dessus on passe à la première musique suivante -->
+
+
                         </li>
-					
-					
-					
-					</ul> <!-- Fin de la zone des musiques -->
-					
-					
-				<div class="Envoyer"> <!-- Début de la zone Envoyer -->
-				<input type="submit" value="Envoyer!">
-				</div>
-				</form>
-				<button id="confirmerTout" type="button" name="Confirmer"  onclick="Confirmer()">Confirmer</button> <!-- Bouton Activer quand on clique dessus déclénche l'évènement Activer et sur le bouton est écrit Activer -->	
-				<button class="petitbouton" type="button" name="RetourMusique" id="RetourMusique" onclick="RetourMusique()">Retour vers ambiance mathématique</button> <!-- Bouton Activer quand on clique dessus déclénche l'évènement Activer et sur le bouton est écrit Activer -->	
 
-				
-				</div>  <!-- Fin de la zone Envoyer -->
-                
-                <header>
-                    <!-- <a href="page_web.html"><img class="tourne" src="../Images/fleche_bleu.png" alt="" /></a> <!-- On lui dnne le lien du site vers où on veut aller ainsi que le lien de l'image du bouton retour qu'il faudra inverser et diminuer-->
-				<!-- <input type = "image" src="/home/theophile/mathematrix/Images/fleche_bleu.png" value = "Retour vers le site MATHEMATRIX!"  onclick = "history.back()"> -->
+
+
+                    </ul> <!-- Fin de la zone des musiques -->
+
+
+                    <div class="Envoyer">
+                        <!-- Début de la zone Envoyer -->
+                        <input type="submit" value="Envoyer!">
+                    </div>
+                </form>
+                <button id="confirmerTout" type="button" name="Confirmer" onclick="Confirmer()">Confirmer</button> <!-- Bouton Activer quand on clique dessus déclénche l'évènement Activer et sur le bouton est écrit Activer -->
+                <button class="petitbouton" type="button" name="RetourMusique" id="RetourMusique" onclick="RetourMusique()">Retour vers ambiance mathématique</button> <!-- Bouton Activer quand on clique dessus déclénche l'évènement Activer et sur le bouton est écrit Activer -->
+
+
+            </div> <!-- Fin de la zone Envoyer -->
+
+            <header>
+                <!-- <a href="page_web.html"><img class="tourne" src="../Images/fleche_bleu.png" alt="" /></a> <!-- On lui dnne le lien du site vers où on veut aller ainsi que le lien de l'image du bouton retour qu'il faudra inverser et diminuer-->
+                <!-- <input type = "image" src="/home/theophile/mathematrix/Images/fleche_bleu.png" value = "Retour vers le site MATHEMATRIX!"  onclick = "history.back()"> -->
 
                 <div id="haut">
-                    <a href="../index.html" ><img class="tourne" src="../Images/fleche_bleu.png" alt="" /></a>
+                    <a href="../index.html"><img class="tourne" src="../Images/fleche_bleu.png" alt="" /></a>
                     <h1 class="hauthaut"> MATHEMATRIX </h1><!-- Le titre MATHEMATRIX -->
                     <div id="haut_droite">
-                        <h2> Score: </h2><span  id="score"><!-- Si le résultat est vrai alors on ajoute 1 au score--></span><!-- Le titre Score plus petit que MATHEMATRIX--> <!-- La zone où on balance le score -->
-                        
-				        <h2 id="byebyeh2" >Chronomètre</h2> <!-- Le titre plus petit Chronomètre-->
-                        <span id="minutes" ></span><span><span id="deuxpointsbyebye">:</span></span><span id="secondes" class="droite"></span> <!-- On crée une zone minutes et une zones secondes pour injecter les secondes et les minutes dans le chronomètre -->
-                        <p id="Yo" >
-                            <button  id="pausebye" name="pauseChrono" onclick="pauseChrono()">Pause Chrono</button>
-				            <button  id="byebye" name="fin" onclick="fin()">Je ne veux plus te voir chrono</button> <!-- Bouton fin quand on clique dessus déclénche l'évènement fin et sur le bouton est écrit fin -->
-                        </p>
-                        
- 				   </div>
-                </div>
-                    
-                </header>
-                
-                 <div id="divPause" style="display: none;" class="filtrenoir">
-                     
-                     <p id="PauseParagrapheMentalus" >Pause Mentale</p>
-				
-            <button id="finPause" name="finPause" onclick="finPause()">Fin de la pause mentale</button>
+                        <h2> Score: </h2><span id="score">
+                            <!-- Si le résultat est vrai alors on ajoute 1 au score--></span><!-- Le titre Score plus petit que MATHEMATRIX-->
+                        <!-- La zone où on balance le score -->
 
+                        <h2 id="byebyeh2">Chronomètre</h2> <!-- Le titre plus petit Chronomètre-->
+                        <span id="minutes"></span><span><span id="deuxpointsbyebye">:</span></span><span id="secondes" class="droite"></span> <!-- On crée une zone minutes et une zones secondes pour injecter les secondes et les minutes dans le chronomètre -->
+                        <p id="Yo">
+                            <button id="pausebye" name="pauseChrono" onclick="pauseChrono()">Pause Chrono</button>
+                            <button id="byebye" name="fin" onclick="fin()">Je ne veux plus te voir chrono</button> <!-- Bouton fin quand on clique dessus déclénche l'évènement fin et sur le bouton est écrit fin -->
+                        </p>
 
                     </div>
-                
+                </div>
 
-				 <h2>Calcul:</h2> <!-- Le titre Calcul plus petit que MATHEMATRIX-->
-				<p id="calcul"> <span id="nb1"></span> <span id="op"></span> <span id="nb2"></span></p> <!-- La zone où on balance le nombre 1 le signe et le nombre 2 -->
+            </header>
 
-				<h3>Réponse:</h3> <!--La partie écrite réponse -->
-				<input onKeyPress="if (event.keyCode == 13) mafonction()" type="text" id="texte" /> <!-- La zone où on peut écrire nôtre réponse à l'intérieur-->
-				<button id="check" name="check" onclick="nombre()">Check</button> <!-- Le bouton pour vérifier la réponse et qui répond par vrai ou faux -->
+            <div id="divPause" style="display: none;" class="filtrenoir">
 
-				<h2> Vérification de la réponse:</h2> <!-- la zone de vérification de la réponse -->
-				<p id="reponse"> <br /> </p> <!-- La zone où on balance la réponse vraie ou faux -->
+                <p id="PauseParagrapheMentalus">Pause Mentale</p>
 
-				 <button style="display:none;" id="invisible" class="calculSuivant" name="suivant" onclick="calculSuivant()">Calcul suivant</button>  <!-- Le calcul suivant -->
-
-				<button id="pause" name="pause" >Pause</button> <!-- Le bouton pause -->
-				<button id="musiqueMaëstro" name="musiqueMaëstro" onclick="musiqueMaëstro()" >Musique Maëstro</button> <!-- Le bouton pause -->
-				
-
-<audio id="myAudio" src="../musique/01.Forever%20Bound%20-%20Stereo%20Madness.mp3" ></audio>
-
-<button id="boutonVisibleApllicationBasPauseAudio" onclick="pauseAudio()" type="button">Pause Audio</button> 
-
-<button id="boutonVisibleApllicationBasReprendreLaMusique" type="button" name="Activer" class="Activer" onclick="playAudio()">Reprendre la musique</button> <!-- Bouton Activer quand on clique dessus déclénche l'évènement Activer et sur le bouton est écrit Activer -->
-
-<button id="pauseMentale"> Pause mentale</button>
-            
-
-			</article> <!-- Fin du code javascript de la partie vrai ou faux concernat la vérification du résultat donner par l'utilisateur -->
-		</section>  <!-- Fin du code de la partie du site excepté la bordure, ce qu'il y a en haut et en bas -->
+                <button id="finPause" name="finPause" onclick="finPause()">Fin de la pause mentale</button>
 
 
+            </div>
+
+
+            <h2>Calcul:</h2> <!-- Le titre Calcul plus petit que MATHEMATRIX-->
+            <p id="calcul"> <span id="nb1"></span> <span id="op"></span> <span id="nb2"></span></p> <!-- La zone où on balance le nombre 1 le signe et le nombre 2 -->
+
+            <h3>Réponse:</h3>
+            <!--La partie écrite réponse -->
+            <input onKeyPress="if (event.keyCode == 13) mafonction()" type="text" id="texte" /> <!-- La zone où on peut écrire nôtre réponse à l'intérieur-->
+            <button id="check" name="check" onclick="nombre()">Check</button> <!-- Le bouton pour vérifier la réponse et qui répond par vrai ou faux -->
+
+            <h2> Vérification de la réponse:</h2> <!-- la zone de vérification de la réponse -->
+            <p id="reponse"> <br /> </p> <!-- La zone où on balance la réponse vraie ou faux -->
+
+            <button style="display:none;" id="invisible" class="calculSuivant" name="suivant" onclick="calculSuivant()">Calcul suivant</button> <!-- Le calcul suivant -->
+
+            <button id="pause" name="pause">Pause</button> <!-- Le bouton pause -->
+            <button id="musiqueMaëstro" name="musiqueMaëstro" onclick="musiqueMaëstro()">Musique Maëstro</button> <!-- Le bouton pause -->
+
+
+            <audio id="myAudio" src="../musique/01.Forever%20Bound%20-%20Stereo%20Madness.mp3"></audio>
+
+            <button id="boutonVisibleApllicationBasPauseAudio" onclick="pauseAudio()" type="button">Pause Audio</button>
+
+            <button id="boutonVisibleApllicationBasReprendreLaMusique" type="button" name="Activer" class="Activer" onclick="playAudio()">Reprendre la musique</button> <!-- Bouton Activer quand on clique dessus déclénche l'évènement Activer et sur le bouton est écrit Activer -->
+
+            <button id="pauseMentale"> Pause mentale</button>
+
+
+        </article> <!-- Fin du code javascript de la partie vrai ou faux concernat la vérification du résultat donner par l'utilisateur -->
+    </section> <!-- Fin du code de la partie du site excepté la bordure, ce qu'il y a en haut et en bas -->
 
 
 
-	<script> <!-- Début du code javascript pour tout le site -->
-        
-        function musiqueMaëstro() {
-								document.getElementById('ambiance').style.display = 'flex'; //Faire disparaître la div ambiance
-								document.getElementById('CompteOuPas').style.display = 'none'; //Faire disparaître la div CompteOuPas
-								document.getElementById('OuiCompte').style.display = 'none'; //Faire disparaître la div OuiCompte
-								document.getElementById('PasCompte').style.display = 'none'; //Faire disparaître la div PasCompte  
-            console.log("je met en pause "+pause);
-		clearInterval(intervalID);
-		pause=1;    
-                                
-            
-            
-                    
+
+
+    <script>
+        <!-- Début du code javascript pour tout le site 
+        -->
+        function
+
+        musiqueMaëstro()
+
+        {
+
+        document.getElementById('ambiance').style.display
+
+        =
+
+        'flex';
+
+        //Faire
+
+        disparaître
+
+        la
+
+        div
+
+        ambiance
+
+        document.getElementById('CompteOuPas').style.display
+
+        =
+
+        'none';
+
+        //Faire
+
+        disparaître
+
+        la
+
+        div
+
+        CompteOuPas
+
+        document.getElementById('OuiCompte').style.display
+
+        =
+
+        'none';
+
+        //Faire
+
+        disparaître
+
+        la
+
+        div
+
+        OuiCompte
+
+        document.getElementById('PasCompte').style.display
+
+        =
+
+        'none';
+
+        //Faire
+
+        disparaître
+
+        la
+
+        div
+
+        PasCompte
+
+        console.log("je
+
+        met
+
+        en
+
+        pause
+
+        "+pause);
+
+        clearInterval(intervalID);
+
+        pause = 1;
+
         }
 
+        function
 
-		function JeNenVeuxPas() { //La fonction JeNenVeuxPas qui se déclenche quand on clique sur le bouton non merci
-								document.getElementById('ambiance').style.display = 'none'; //Faire disparaître la div ambiance
-								document.getElementById('CompteOuPas').style.display = 'none'; //Faire disparaître la div CompteOuPas
-								document.getElementById('OuiCompte').style.display = 'none'; //Faire disparaître la div OuiCompte
-								document.getElementById('PasCompte').style.display = 'none'; //Faire disparaître la div PasCompte
-                                document.getElementById('pause').style.display = 'none'; //Faire disparaître la div CompteOuPas
-								document.getElementById('boutonVisibleApllicationBasPauseAudio').style.display = 'none'; /*Faire disparaître le boutonVisibleApllicationBasPauseAudio  */
-								document.getElementById('boutonVisibleApllicationBasReprendreLaMusique').style.display = 'none'; /*Faire disparaître le boutonVisibleApllicationBasReprendreLaMusique */
-                                
-								
-		} 
+        JeNenVeuxPas()
 
-		function Compte() {
-											document.getElementById('ambiance').style.display = 'none'; //Faire disparaître la div ambiance
-											document.getElementById('CompteOuPas').style.display = 'none'; //Faire disparaître la div CompteOuPas
-											document.getElementById('OuiCompte').style.display = 'flex'; //Faire disparaître la div PasCompte
-											document.getElementById('PasCompte').style.display = 'none'; //Faire disparaître la div PasCompte
+        {
+
+        //La
+
+        fonction
+
+        JeNenVeuxPas
+
+        qui
+
+        se
+
+        déclenche
+
+        quand
+
+        on
+
+        clique
+
+        sur
+
+        le
+
+        bouton
+
+        non
+
+        merci
+
+        document.getElementById('ambiance').style.display
+
+        =
+
+        'none';
+
+        //Faire
+
+        disparaître
+
+        la
+
+        div
+
+        ambiance
+
+        document.getElementById('CompteOuPas').style.display
+
+        =
+
+        'none';
+
+        //Faire
+
+        disparaître
+
+        la
+
+        div
+
+        CompteOuPas
+
+        document.getElementById('OuiCompte').style.display
+
+        =
+
+        'none';
+
+        //Faire
+
+        disparaître
+
+        la
+
+        div
+
+        OuiCompte
+
+        document.getElementById('PasCompte').style.display
+
+        =
+
+        'none';
+
+        //Faire
+
+        disparaître
+
+        la
+
+        div
+
+        PasCompte
+
+        document.getElementById('pause').style.display
+
+        =
+
+        'none';
+
+        //Faire
+
+        disparaître
+
+        la
+
+        div
+
+        CompteOuPas
+
+        document.getElementById('boutonVisibleApllicationBasPauseAudio').style.display
+
+        =
+
+        'none';
+
+        /*Faire
+
+        disparaître
+
+        le
+
+        boutonVisibleApllicationBasPauseAudio
+
+        */
+
+        document.getElementById('boutonVisibleApllicationBasReprendreLaMusique').style.display
+
+        =
+
+        'none';
+
+        /*Faire
+
+        disparaître
+
+        le
+
+        boutonVisibleApllicationBasReprendreLaMusique
+
+        */
+
+        }
+
+        function
+
+        Compte()
+
+        {
+
+        document.getElementById('ambiance').style.display
+
+        =
+
+        'none';
+
+        //Faire
+
+        disparaître
+
+        la
+
+        div
+
+        ambiance
+
+        document.getElementById('CompteOuPas').style.display
+
+        =
+
+        'none';
+
+        //Faire
+
+        disparaître
+
+        la
+
+        div
+
+        CompteOuPas
+
+        document.getElementById('OuiCompte').style.display
+
+        =
+
+        'flex';
+
+        //Faire
+
+        disparaître
+
+        la
+
+        div
+
+        PasCompte
+
+        document.getElementById('PasCompte').style.display
+
+        =
+
+        'none';
+
+        //Faire
+
+        disparaître
+
+        la
+
+        div
+
+        PasCompte
+
+        }
+
+        function
+
+        PasDeCompte()
+
+        {
+
+        document.getElementById('ambiance').style.display
+
+        =
+
+        'none';
+
+        //Faire
+
+        disparaître
+
+        la
+
+        div
+
+        ambiance
+
+        document.getElementById('CompteOuPas').style.display
+
+        =
+
+        'none';
+
+        //Faire
+
+        disparaître
+
+        la
+
+        div
+
+        CompteOuPas
+
+        document.getElementById('OuiCompte').style.display
+
+        =
+
+        'none';
+
+        //Faire
+
+        disparaître
+
+        la
+
+        div
+
+        PasCompte
+
+        document.getElementById('PasCompte').style.display
+
+        =
+
+        'flex';
+
+        //Faire
+
+        apapraître
+
+        la
+
+        div
+
+        PasCompte
+
+        }
+
+        var
+
+        finalementRevientChrono
+
+        =
+
+        document.createElement("button");
+
+        //
+
+        On
+
+        crée
+
+        dans
+
+        le
+
+        document
+
+        le
+
+        bouton
+
+        finalementRevientChrono
+
+        finalementRevientChrono.setAttribute("type", "button");
+
+        //
+
+        On
+
+        définit
+
+        les
+
+        attributs
+
+        du
+
+        bouton
+
+        finalementRevientChrono
+
+        finalementRevientChrono.id
+
+        =
+
+        'finalementRevientChrono';
+
+        //
+
+        Définition
+
+        de
+
+        l 'identifiant
+
+        du
+
+        bouton
+
+        finalementRevientChrono
+
+        finalementRevientChrono.textContent
+
+        =
+
+        'finalementRevientChrono';
+
+        //
+
+        Définition
+
+        de
+
+        son
+
+        contenu
+
+        textuel
+
+        document.getElementById('Yo').appendChild(finalementRevientChrono);
+
+        /*
+
+        On
+
+        fait
+
+        aparaitre
+
+        le
+
+        bouton
+
+        finalementRevientChrono
+
+        */
+
+        var
+
+        byebyeChrono
+
+        =
+
+        document.getElementById("byebye");
+
+        byebyeChrono.addEventListener("click",
+
+        function
+
+        ()
+
+        {
+
+        //Quand
+
+        on
+
+        clique
+
+        sur
+
+        le
+
+        bouton
+
+        byebyeChrono,
+
+        on
+
+        déclenche
+
+        la
+
+        fonction
+
+        document.getElementById('byebye').style.display
+
+        =
+
+        'none'; /*Cacher
+
+        le
+
+        bouton
+
+        Je
+
+        ne
+
+        veux
+
+        plus
+
+        te
+
+        voir
+
+        chrono
+
+        */
+
+        document.getElementById('pausebye').style.display
+
+        =
+
+        'none';
+
+        /*Faire
+
+        disparaître
+
+        le
+
+        bouton
+
+        pause
+
+        chrono
+
+        */
+
+        document.getElementById('byebyeh2').style.display
+
+        =
+
+        'none';
+
+        //Faire
+
+        disparaître
+
+        le
+
+        h2
+
+        chronomètre
+
+        document.getElementById('secondes').style.display
+
+        =
+
+        'none';
+
+        /*
+
+        Faire
+
+        la
+
+        zone
+
+        des
+
+        secondes
+
+        */
+
+        document.getElementById('minutes').style.display
+
+        =
+
+        'none';
+
+        //Faire
+
+        disparaître
+
+        la
+
+        zone
+
+        des
+
+        minutes
+
+        document.getElementById('deuxpointsbyebye').style.display
+
+        =
+
+        'none';
+
+        /*Faire
+
+        disparaître
+
+        les
+
+        deux
+
+        points
+
+        entre
+
+        les
+
+        secondes
+
+        et
+
+        les
+
+        minutes
+
+        */
+
+        document.getElementById('finalementRevientChrono').style.display
+
+        =
+
+        'block';
+
+        });
+
+        finalementRevientChrono.addEventListener("click",
+
+        function
+
+        ()
+
+        {
+
+        /*
+
+        Quand
+
+        on
+
+        clique
+
+        sur
+
+        le
+
+        bouton
+
+        finalementRevientChrono
+
+        */
+
+        document.getElementById('byebye').style.display
+
+        =
+
+        'inline-block';
+
+        /*Rendre
+
+        visible
+
+        le
+
+        bouton
+
+        Je
+
+        ne
+
+        veux
+
+        plus
+
+        te
+
+        voir
+
+        chrono
+
+        */
+
+        document.getElementById('pausebye').style.display
+
+        =
+
+        'inline-block';
+
+        /*Faire
+
+        apapraître
+
+        le
+
+        bouton
+
+        pause
+
+        chrono
+
+        */
+
+        document.getElementById('byebyeh2').style.display
+
+        =
+
+        'block';
+
+        //Faire
+
+        apparaître
+
+        le
+
+        h2
+
+        chronomètre
+
+        document.getElementById('secondes').style.display
+
+        =
+
+        'inline-block';
+
+        /*
+
+        Faire
+
+        la
+
+        zone
+
+        des
+
+        secondes
+
+        */
+
+        document.getElementById('minutes').style.display
+
+        =
+
+        'inline-block';
+
+        //Faire
+
+        disparaître
+
+        la
+
+        zone
+
+        des
+
+        minutes
+
+        document.getElementById('deuxpointsbyebye').style.display
+
+        =
+
+        'inline-block';
+
+        /*Faire
+
+        disparaître
+
+        les
+
+        deux
+
+        points
+
+        entre
+
+        les
+
+        secondes
+
+        et
+
+        les
+
+        minutes
+
+        */
+
+        document.getElementById('finalementRevientChrono').style.display
+
+        =
+
+        'none';
+
+        });
+
+        window.onload
+
+        =
+
+        document.getElementById('finalementRevientChrono').style.display
+
+        =
+
+        'none';
+
+        //On
+
+        définit
+
+        d 'abord
+
+        les
+
+        variables
+
+        pour
+
+        quelles
+
+        soient
+
+        des
+
+        variables
+
+        globales
+
+        var
+
+        minute
+
+        =
+
+        0;
+
+        //On
+
+        initialise
+
+        à
+
+        0
+
+        les
+
+        minutes
+
+        du
+
+        chronomètre
+
+        var
+
+        seconde
+
+        =
+
+        0;
+
+        //On
+
+        initialise
+
+        à
+
+        0
+
+        les
+
+        secondes
+
+        du
+
+        chronomètre
+
+        var
+
+        intervalID
+
+        = 0;
+
+        //
+
+        Variable
+
+        qui
+
+        stocke
+
+        l 'identifiant
+
+        de
+
+        settimeout
+
+        pour
+
+        l 'arrêter
+
+        plus
+
+        tard
+
+        avec
+
+        le
+
+        cleartimeout
+
+        var
+
+        scoreCalcul = 0;
+
+        //
+
+        La
+
+        variable
+
+        utilisé
+
+        pour
+
+        calculer
+
+        le
+
+        score
+
+        document.getElementById("score").textContent = scoreCalcul;
+
+        //On
+
+        balance
+
+        la
+
+        valeur
+
+        de
+
+        score
+
+        dans
+
+        la
+
+        zone
+
+        score
+
+        //
+
+        window.onload
+
+        =
+
+        chronoStart;
+
+        //
+
+        Quand
+
+        la
+
+        fenêtre
+
+        est
+
+        chargé,
+
+        le
+
+        chrono
+
+        commence
+
+        var
+
+        x
+
+        =
+
+        document.getElementById("myAudio");
+
+        var
+
+        boutonMusiqueSuivante =
+
+        document.getElementById("MusiqueSuivante");
+
+        //On
+
+        définit
+
+        boutonMusiqueSuivante
+
+        comme
+
+        étant
+
+        le
+
+        fait
+
+        que
+
+        l 'on
+
+        clique
+
+        sur
+
+        le
+
+        bouton
+
+        MusiqueSuivante
+
+        var
+
+        nombreclicMusiqueSuivante
+
+        =
+
+        1;
+
+        //On
+
+        définit
+
+        nombreclicMusiqueSuivante
+
+        à
+
+        1
+
+        var
+
+        boutonMusiqueSuivanteclique
+
+        =
+
+        document.getElementById("MusiqueSuivante");
+
+        //
+
+        Ajout
+
+        d 'un
+
+        gestionnaire
+
+        pour
+
+        l 'événement
+
+        click
+
+        boutonMusiqueSuivante.addEventListener("click",
+
+        function
+
+        ()
+
+        {
+
+        //Quand
+
+        on
+
+        clique
+
+        sur
+
+        le
+
+        bouton
+
+        musique
+
+        suivante,
+
+        on
+
+        déclenche
+
+        la
+
+        fonction
+
+        MusiqueSuivante
+
+        nombreclicMusiqueSuivante
+
+        =
+
+        nombreclicMusiqueSuivante + 1;
+
+        console.log("clic
+
+        musique
+
+        suivante
+
+        "+nombreclicMusiqueSuivante);
+
+        //On
+
+        affiche
+
+        clic
+
+        pour
+
+        voir
+
+        si
+
+        cela
+
+        marche
+
+        boutonMusiqueSuivante.id
+
+        =
+
+        `musique
+
+        `+nombreclicMusiqueSuivante+`
+        `;
+
+        //
+
+        Définition
+
+        de
+
+        l 'identifiant
+
+        du
+
+        bouton
+
+        musique
+
+        suivante
+
+        boutonMusiqueSuivante.textContent
+
+        =
+
+        `MusiqueSuivante`;
+
+        //
+
+        Définition
+
+        de
+
+        son
+
+        contenu
+
+        textuel
+
+        var
+
+        NouvelMusiqueli
+
+        =
+
+        document.createElement("li");
+
+        //
+
+        Création
+
+        d 'un
+
+        élément
+
+        li
+
+        NouvelMusiqueli.classList.add("nouvelleMusique");
+
+        //
+
+        Définition
+
+        de
+
+        l 'identifiant
+
+        pour
+
+        avoir
+
+        musique
+
+        1,
+
+        2,
+
+        3
+
+        ,
+
+        etc...
+
+        var
+
+        NouvelMusiquespan
+
+        =
+
+        document.createElement("span");
+
+        //
+
+        Création
+
+        d 'un
+
+        élément
+
+        li
+
+        NouvelMusiquespan.textContent
+
+        =
+
+        `Entrer
+
+        la
+
+        musique
+
+        `+nombreclicMusiqueSuivante+`
+        `;
+
+        //
+
+        Définition
+
+        de
+
+        son
+
+        contenu
+
+        textuel
+
+        NouvelMusiqueli.appendChild(NouvelMusiquespan); //On
+
+        fait
+
+        apparaitre
+
+        les
+
+        nouvelles
+
+        musiques
+
+        var
+
+        zonedesaisiedesmusiquessuivantes
+
+        =
+
+        document.createElement("input");
+
+        //On
+
+        défini
+
+        zonedesaisiedesmusiquessuivantes
+
+        comme
+
+        étant
+
+        la
+
+        zone
+
+        où
+
+        on
+
+        rentre
+
+        les
+
+        musiques
+
+        suivantes
+
+        zonedesaisiedesmusiquessuivantes.type
+
+        =
+
+        "file";
+
+        zonedesaisiedesmusiquessuivantes.name
+
+        =
+
+        `zonesaisiemusique` + nombreclicMusiqueSuivante + ``;
+
+        zonedesaisiedesmusiquessuivantes.id
+
+        =
+
+        `zonesaisiemusique` + nombreclicMusiqueSuivante + ``;
+
+        zonedesaisiedesmusiquessuivantes.required;
+
+        NouvelMusiqueli.appendChild(zonedesaisiedesmusiquessuivantes);
+
+        var
+
+        boutonConfirmerMusiqueSuivante
+
+        =
+
+        document.createElement("button");
+
+        boutonConfirmerMusiqueSuivante.setAttribute("type", "button");
+
+        boutonConfirmerMusiqueSuivante.id
+
+        =
+
+        `ConfirmerMusique` + nombreclicMusiqueSuivante + ``;
+
+        //
+
+        Définition
+
+        de
+
+        l 'identifiant
+
+        du
+
+        bouton
+
+        musique
+
+        suivante
+
+        boutonConfirmerMusiqueSuivante.textContent
+
+        =
+
+        `ConfirmerMusique` + nombreclicMusiqueSuivante + ``;
+
+        //
+
+        Définition
+
+        de
+
+        son
+
+        contenu
+
+        textuel
+
+        boutonConfirmerMusiqueSuivante.addEventListener("click", function
+
+        (e) {
+
+        //Quand
+
+        on
+
+        clique
+
+        sur
+
+        le
+
+        bouton
+
+        Musique
+
+        suivante
+
+        musicStore(`zonesaisiemusique` + nombreclicMusiqueSuivante);
+
+        //On
+
+        stocke
+
+        la
+
+        zone
+
+        de
+
+        saisie
+
+        des
+
+        musiques
+
+        //
+
+        e.preventDefault();
+
+        });
+
+        console.log("suite
+
+        boutonConfirmerMusiqueSuivante ");
+
+        NouvelMusiqueli.appendChild(boutonConfirmerMusiqueSuivante);
+
+        NouvelMusiqueli.appendChild(boutonMusiqueSuivante);
+
+        document.getElementById("musicList").appendChild(NouvelMusiqueli);
+
+        //
+
+        Insertion
+
+        du
+
+        nouvel
+
+        élément
+
+        document.querySelector(`#zonesaisiemusique` + nombreclicMusiqueSuivante + ``).addEventListener('change',
+
+        function()
+
+        {
+
+        alert(this.files[0].name);
+
+        });
+
+        NouvelMusiqueli.appendChild(boutonFileUpload);
+
+        /*
+
+    <button type="button" name="FileUpload" id="FileUpload">ChercherMusiqueOrdinateur</button> <!-- Bouton File upload pour chercher une musique oklm --> */
+
+    //On crée alors une div Musique 2 puis 3 puis 4 puis 5 puis etc
+
+    });
+
+    window.addEventListener('DOMContentLoaded', (event) => {
+
+    document.getElementById('CompteOuPas').style.display = 'none' //Faire disparaître la div CompteOuPas
+    document.getElementById('OuiCompte').style.display = 'none' //Faire disparaître la div OuiCompte
+    document.getElementById('PasCompte').style.display = 'none' //Faire disparaître la div PasCompte
+    });
+
+    var pauseMentale= document.getElementById("pauseMentale");
+    var finPauseMentale= document.getElementById("finPause");
+
+    pauseMentale.addEventListener("click", function () {
+    console.log("pauseMental.click");
+    document.getElementById('pauseMentale').style.display = 'none';
+    document.getElementById('divPause').style.display = 'flex';
+    document.getElementById('divPause').style.fontSize = '2em';
+    document.getElementById('finPause').style.width = '20%';
+    document.getElementById('finPause').style.marginLeft = '40%';
+
+    console.log("je met en pause "+pause);
+    clearInterval(intervalID);
+    pause=1;
 
 
-		}
-		
-		function PasDeCompte() {
-											document.getElementById('ambiance').style.display = 'none'; //Faire disparaître la div ambiance
-											document.getElementById('CompteOuPas').style.display = 'none'; //Faire disparaître la div CompteOuPas
-											document.getElementById('OuiCompte').style.display = 'none'; //Faire disparaître la div PasCompte
-											document.getElementById('PasCompte').style.display = 'flex'; //Faire apapraître la div PasCompte
+    // pauseMentale.
+    });
+    finPauseMentale.addEventListener("click", function () {
+    console.log("FinpauseMental.click");
+    document.getElementById('pauseMentale').style.display = 'inline';
+    document.getElementById('divPause').style.display = 'none';
+    console.log("je retire la pause "+pause);
+    intervalID = setInterval(chronoStart,1000);
+    pause=0;
 
-			
-		}
-            var finalementRevientChrono = document.createElement("button"); // On crée dans le document le bouton finalementRevientChrono
-			 finalementRevientChrono.setAttribute("type","button"); // On définit les attributs du bouton  finalementRevientChrono
-            finalementRevientChrono.id = 'finalementRevientChrono'; // Définition de l'identifiant du bouton finalementRevientChrono
-			 finalementRevientChrono.textContent = 'finalementRevientChrono'; // Définition de son contenu textuel
-            document.getElementById('Yo').appendChild(finalementRevientChrono); /* On fait aparaitre le bouton finalementRevientChrono */
-        
-           var byebyeChrono = document.getElementById("byebye");
-            byebyeChrono.addEventListener("click", function () { //Quand on clique sur le bouton byebyeChrono, on déclenche la fonction
-											document.getElementById('byebye').style.display = 'none';/*Cacher le bouton Je ne veux plus te voir chrono */
-											document.getElementById('pausebye').style.display = 'none'; /*Faire disparaître le bouton pause chrono */
-											document.getElementById('byebyeh2').style.display = 'none'; //Faire disparaître le h2 chronomètre
-											document.getElementById('secondes').style.display = 'none'; /* Faire la zone des secondes */
-											document.getElementById('minutes').style.display = 'none'; //Faire disparaître la zone des minutes
-                				            document.getElementById('deuxpointsbyebye').style.display = 'none'; /*Faire disparaître les deux points entre les secondes et les minutes */
-                                            document.getElementById('finalementRevientChrono').style.display = 'block';
-                
 
-                                            
-                                            
-                
-            }); 
-        
-                        			                 
 
-        
-        finalementRevientChrono.addEventListener("click", function () { /* Quand on clique sur le bouton finalementRevientChrono  */
-											document.getElementById('byebye').style.display = 'inline-block'; /*Rendre visible le bouton Je ne veux plus te voir chrono */
-											document.getElementById('pausebye').style.display = 'inline-block'; /*Faire apapraître le bouton pause chrono */
-											document.getElementById('byebyeh2').style.display = 'block'; //Faire apparaître le h2 chronomètre
-											document.getElementById('secondes').style.display = 'inline-block'; /* Faire la zone des secondes */
-											document.getElementById('minutes').style.display = 'inline-block'; //Faire disparaître la zone des minutes
-                				            document.getElementById('deuxpointsbyebye').style.display = 'inline-block'; /*Faire disparaître les deux points entre les secondes et les minutes */
-                                            document.getElementById('finalementRevientChrono').style.display = 'none';
-                
-            }); 
-        
-        
-        window.onload = document.getElementById('finalementRevientChrono').style.display = 'none';
- 
-        
+    mafonction()
+    {
 
-				//On définit d'abord les variables pour quelles soient des variables globales
-				
-		var minute = 0; //On initialise à 0 les minutes du chronomètre
-		var seconde = 0; //On initialise à 0 les secondes du chronomètre
-		var intervalID =0; // Variable qui stocke l'identifiant de settimeout pour l'arrêter plus tard avec le cleartimeout
-		var scoreCalcul=0; // La variable utilisé pour calculer le score
-		document.getElementById("score").textContent=scoreCalcul; //On balance la valeur de score dans la zone score
-//		window.onload = chronoStart; // Quand la fenêtre est chargé, le chrono commence
-        var x = document.getElementById("myAudio"); 		
 
-		
 
-		
-	var boutonMusiqueSuivante= document.getElementById("MusiqueSuivante"); //On définit boutonMusiqueSuivante comme étant le fait que l'on clique sur le bouton MusiqueSuivante
-	
-	var nombreclicMusiqueSuivante = 1; //On définit nombreclicMusiqueSuivante à 1
-	var boutonMusiqueSuivanteclique = document.getElementById("MusiqueSuivante");
+    }
 
-		
-	
-	
-	// Ajout d'un gestionnaire pour l'événement click
-boutonMusiqueSuivante.addEventListener("click", function () { //Quand on clique sur le bouton musique suivante, on déclenche la fonction MusiqueSuivante
-		nombreclicMusiqueSuivante = nombreclicMusiqueSuivante+1;
-		console.log("clic musique suivante "+nombreclicMusiqueSuivante); //On affiche clic pour voir si cela marche
-		
-		boutonMusiqueSuivante.id = `musique `+nombreclicMusiqueSuivante+``; // Définition de l'identifiant du bouton musique suivante
-		boutonMusiqueSuivante.textContent = `MusiqueSuivante`; // Définition de son contenu textuel
-	
-	var NouvelMusiqueli = document.createElement("li"); // Création d'un élément li
 
-		NouvelMusiqueli.classList.add("nouvelleMusique"); // Définition de l'identifiant pour avoir musique 1, 2, 3 , etc...
-		
-		
-			var NouvelMusiquespan = document.createElement("span"); // Création d'un élément li
-			NouvelMusiquespan.textContent = `Entrer la musique `+nombreclicMusiqueSuivante+``; // Définition de son contenu textuel
 
-			NouvelMusiqueli.appendChild(NouvelMusiquespan);//On fait apparaitre les nouvelles musiques
-			
-			var zonedesaisiedesmusiquessuivantes = document.createElement("input"); //On défini  zonedesaisiedesmusiquessuivantes comme étant la zone où on rentre les musiques suivantes
-			zonedesaisiedesmusiquessuivantes.type = "file";
-			zonedesaisiedesmusiquessuivantes.name = `zonesaisiemusique`+nombreclicMusiqueSuivante+``;
-			zonedesaisiedesmusiquessuivantes.id = `zonesaisiemusique`+nombreclicMusiqueSuivante+``;
-			zonedesaisiedesmusiquessuivantes.required;
+    // pauseMentale.
+    });
 
-			NouvelMusiqueli.appendChild(zonedesaisiedesmusiquessuivantes);
-			
-			var boutonConfirmerMusiqueSuivante = document.createElement("button");
-			boutonConfirmerMusiqueSuivante.setAttribute("type","button");
-			boutonConfirmerMusiqueSuivante.id = `ConfirmerMusique`+nombreclicMusiqueSuivante+``; // Définition de l'identifiant du bouton musique suivante
-			boutonConfirmerMusiqueSuivante.textContent = `ConfirmerMusique`+nombreclicMusiqueSuivante+``; // Définition de son contenu textuel
 
-			boutonConfirmerMusiqueSuivante.addEventListener("click",function (e){ //Quand on clique sur le bouton Musique suivante
-				musicStore(`zonesaisiemusique`+nombreclicMusiqueSuivante); //On stocke la zone de saisie des musiques
-//				e.preventDefault();
-				});
-			console.log("suite boutonConfirmerMusiqueSuivante");
-			NouvelMusiqueli.appendChild(boutonConfirmerMusiqueSuivante);
+    </script> <!-- Fin du code javascript pour tout le site -->
 
-			NouvelMusiqueli.appendChild(boutonMusiqueSuivante);
-    
-            
-document.getElementById("musicList").appendChild(NouvelMusiqueli); // Insertion du nouvel élément
-    
-    
-        
-                document.querySelector(`#zonesaisiemusique`+nombreclicMusiqueSuivante+``).addEventListener('change', function() {
-
-                alert(this.files[0].name);
-
-                    });
-                
-                		                NouvelMusiqueli.appendChild(boutonFileUpload);
-	
-
-                
-				
-   
-    
-    
-    
-    /* <button  type="button" name="FileUpload" id="FileUpload" >ChercherMusiqueOrdinateur</button> <!-- Bouton File upload pour chercher une musique oklm -->  */
-
-//On crée alors une div Musique 2 puis 3 puis 4 puis 5 puis etc
-   
-});
-	
-window.addEventListener('DOMContentLoaded', (event) => {
-
-								document.getElementById('CompteOuPas').style.display = 'none' //Faire disparaître la div CompteOuPas
-								document.getElementById('OuiCompte').style.display = 'none' //Faire disparaître la div OuiCompte
-								document.getElementById('PasCompte').style.display = 'none' //Faire disparaître la div PasCompte
-								});
-
-var pauseMentale= document.getElementById("pauseMentale");	
-var finPauseMentale= document.getElementById("finPause");
-            
-            pauseMentale.addEventListener("click", function () {
-                            console.log("pauseMental.click");
-                document.getElementById('pauseMentale').style.display = 'none';
-                document.getElementById('divPause').style.display = 'flex';
-                document.getElementById('divPause').style.fontSize = '2em';
-                document.getElementById('finPause').style.width = '20%';
-                document.getElementById('finPause').style.marginLeft = '40%';
-
-		console.log("je met en pause "+pause);
-		clearInterval(intervalID);
-		pause=1;                
-
-                
-          //  pauseMentale.
-            });
-         finPauseMentale.addEventListener("click", function () {
-                            console.log("FinpauseMental.click");
-                document.getElementById('pauseMentale').style.display = 'inline';
-                document.getElementById('divPause').style.display = 'none';
-             console.log("je retire la pause "+pause);
-			intervalID = setInterval(chronoStart,1000);
-            pause=0;
-
-             
-             
-             mafonction()
-             {
-                 
-                 
-                 
-             }
-                
-
-                
-          //  pauseMentale.
-            });
-        
-            
-	</script>  <!-- Fin du code javascript pour tout le site -->
-
-<script src="../javascript/chronometreeasy.js"></script> <!-- Le lien vers la partie chronomètre -->
-<script src="../javascript/calcul.js"></script> <!-- Le lien javascript vers la partie calcul -->
-<script src="../javascript/musique.js"></script> <!-- Le lien javascript vers la partie musique -->
+    <script src="../javascript/chronometreeasy.js"></script> <!-- Le lien vers la partie chronomètre -->
+    <script src="../javascript/calcul.js"></script> <!-- Le lien javascript vers la partie calcul -->
+    <script src="../javascript/musique.js"></script> <!-- Le lien javascript vers la partie musique -->
 
 </body> <!-- Fin du code du corps du site -->
 
 
 
 </html> <!-- Fin du code du site-->
-
