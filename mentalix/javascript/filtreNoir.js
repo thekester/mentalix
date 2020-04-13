@@ -12,35 +12,33 @@ musiqueMaestro.addEventListener("click", function () {
 
 
 var JeNenVeuxPas = document.getElementById('declencheur2');
-JeNenVeuxPas.addEventListener("click", function() {
+JeNenVeuxPas.addEventListener("click", function () {
     document.getElementById('ambiance').style.display = 'none'; //Faire disparaître la div ambiance
     document.getElementById('CompteOuPas').style.display = 'none'; //Faire disparaître la div CompteOuPas
     document.getElementById('OuiCompte').style.display = 'none'; //Faire disparaître la div OuiCompte
     document.getElementById('PasCompte').style.display = 'none'; //Faire disparaître la div PasCompte
     document.getElementById('pause').style.display = 'none'; //Faire disparaître la div CompteOuPas
     document.getElementById('boutonVisibleApllicationBasPauseAudio').style.display = 'none'; /*Faire disparaître le boutonVisibleApllicationBasPauseAudio  */
-    document.getElementById('boutonVisibleApllicationBasReprendreLaMusique').style.display = 'none'; /*Faire disparaître le boutonVisibleApllicationBasReprendreLaMusique */  
+    document.getElementById('boutonVisibleApllicationBasReprendreLaMusique').style.display = 'none'; /*Faire disparaître le boutonVisibleApllicationBasReprendreLaMusique */
 });
 
-
-
-function Compte() {
+var compte = document.getElementById('Compte');
+compte.addEventListener("click", function () {
     document.getElementById('ambiance').style.display = 'none'; //Faire disparaître la div ambiance
     document.getElementById('CompteOuPas').style.display = 'none'; //Faire disparaître la div CompteOuPas
     document.getElementById('OuiCompte').style.display = 'flex'; //Faire disparaître la div PasCompte
     document.getElementById('PasCompte').style.display = 'none'; //Faire disparaître la div PasCompte
+});
 
-
-}
-
-function PasDeCompte() {
+var pasDeCompte = document.getElementById('PasDeCompte');
+pasDeCompte.addEventListener("click",function(){
     document.getElementById('ambiance').style.display = 'none'; //Faire disparaître la div ambiance
     document.getElementById('CompteOuPas').style.display = 'none'; //Faire disparaître la div CompteOuPas
     document.getElementById('OuiCompte').style.display = 'none'; //Faire disparaître la div PasCompte
-    document.getElementById('PasCompte').style.display = 'flex'; //Faire apapraître la div PasCompte
+    document.getElementById('PasCompte').style.display = 'flex'; //Faire apapraître la div PasCompte 
+});
 
 
-}
 var finalementRevientChrono = document.createElement("button"); // On crée dans le document le bouton finalementRevientChrono
 finalementRevientChrono.setAttribute("type", "button"); // On définit les attributs du bouton  finalementRevientChrono
 finalementRevientChrono.id = 'finalementRevientChrono'; // Définition de l'identifiant du bouton finalementRevientChrono
