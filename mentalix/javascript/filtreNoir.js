@@ -1,5 +1,5 @@
-var musiqueMaëstro = document.getElementById('musiqueMaëstro');
-musiqueMaëstro.addEventListener("click", function () {
+var musiqueMaestro = document.getElementById('musiqueMaëstro');
+musiqueMaestro.addEventListener("click", function () {
     document.getElementById('ambiance').style.display = 'flex'; //Faire disparaître la div ambiance
     document.getElementById('CompteOuPas').style.display = 'none'; //Faire disparaître la div CompteOuPas
     document.getElementById('OuiCompte').style.display = 'none'; //Faire disparaître la div OuiCompte
@@ -10,33 +10,19 @@ musiqueMaëstro.addEventListener("click", function () {
 
 });
 
-/*
-function musiqueMaëstro() {
-    document.getElementById('ambiance').style.display = 'flex'; //Faire disparaître la div ambiance
-    document.getElementById('CompteOuPas').style.display = 'none'; //Faire disparaître la div CompteOuPas
-    document.getElementById('OuiCompte').style.display = 'none'; //Faire disparaître la div OuiCompte
-    document.getElementById('PasCompte').style.display = 'none'; //Faire disparaître la div PasCompte  
-    console.log("je met en pause " + pause);
-    clearInterval(intervalID);
-    pause = 1;
 
-
-
-
-}*/
-
-
-function JeNenVeuxPas() { //La fonction JeNenVeuxPas qui se déclenche quand on clique sur le bouton non merci
+var JeNenVeuxPas = document.getElementById('declencheur2');
+JeNenVeuxPas.addEventListener("click", function() {
     document.getElementById('ambiance').style.display = 'none'; //Faire disparaître la div ambiance
     document.getElementById('CompteOuPas').style.display = 'none'; //Faire disparaître la div CompteOuPas
     document.getElementById('OuiCompte').style.display = 'none'; //Faire disparaître la div OuiCompte
     document.getElementById('PasCompte').style.display = 'none'; //Faire disparaître la div PasCompte
     document.getElementById('pause').style.display = 'none'; //Faire disparaître la div CompteOuPas
     document.getElementById('boutonVisibleApllicationBasPauseAudio').style.display = 'none'; /*Faire disparaître le boutonVisibleApllicationBasPauseAudio  */
-    document.getElementById('boutonVisibleApllicationBasReprendreLaMusique').style.display = 'none'; /*Faire disparaître le boutonVisibleApllicationBasReprendreLaMusique */
+    document.getElementById('boutonVisibleApllicationBasReprendreLaMusique').style.display = 'none'; /*Faire disparaître le boutonVisibleApllicationBasReprendreLaMusique */  
+});
 
 
-}
 
 function Compte() {
     document.getElementById('ambiance').style.display = 'none'; //Faire disparaître la div ambiance
