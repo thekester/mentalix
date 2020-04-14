@@ -1,1 +1,123 @@
+.closable {
+    margin: 0 0 19px 0;
+    border-bottom: 1px solid #d2d2d2;
+    cursor: pointer;
+    position: relative;
+}
 
+
+
+#closable1 {
+    border-bottom: 1px solid #d2d2d2;
+}
+
+#closable2 {
+    border-bottom: 1px solid #d2d2d2;
+}
+
+#closable3 {
+    border-bottom: 1px solid #d2d2d2;
+}
+
+#closable4 {
+    border-bottom: 1px solid #d2d2d2;
+}
+
+#closable5 {
+    border-bottom: 1px solid #d2d2d2;
+}
+
+#closable6 {
+    border-bottom: 1px solid #d2d2d2;
+}
+
+#closable7 {
+    border-bottom: 1px solid #d2d2d2;
+}
+
+#closable8 {
+    border-bottom: 1px solid #d2d2d2;
+}
+
+#closable9 {
+    border-bottom: 1px solid #d2d2d2;
+}
+
+
+
+
+#fleche1 {
+    float: right;
+}
+
+#fleche2 {
+    float: right;
+}
+
+#fleche3 {
+    float: right;
+}
+
+#fleche4 {
+    float: right;
+}
+
+#fleche5 {
+    float: right;
+}
+
+#fleche6 {
+    float: right;
+}
+
+#fleche7 {
+    float: right;
+}
+
+#fleche8 {
+    float: right;
+}
+
+#fleche9 {
+    float: right;
+}
+
+#closableConcernByClosable2
+{
+    display:none;
+}
+
+#closableConcernByClosable3
+{
+    display:none;
+}
+
+#closableConcernByClosable4
+{
+    display:none;
+}
+
+#closableConcernByClosable5
+{
+    display:none;
+}
+
+#closableConcernByClosable6
+{
+    display:none;
+}
+
+#closableConcernByClosable7
+{
+    display:none;
+}
+
+#closableConcernByClosable8
+{
+    display:none;
+}
+
+#closableConcernByClosable9
+{
+    display:none;
+}
