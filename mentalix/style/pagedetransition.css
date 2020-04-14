@@ -82,6 +82,11 @@
     float: right;
 }
 
+#closableConcernByClosable1
+{
+    display:none;
+}
+
 #closableConcernByClosable2
 {
     display:none;

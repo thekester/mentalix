@@ -34,8 +34,8 @@ var fleche9 = document.getElementById('fleche9');
 
 
 window.onload = function () {
-    closableConcernByClosable1.style.display = "none";
-    document.getElementById("fleche2").className = "fas fa-angle-right fa-rotate-90";
+    //closableConcernByClosable1.style.display = "none";
+    document.getElementById("fleche1").className = "fas fa-angle-right fa-rotate-90";
 
 };
 
