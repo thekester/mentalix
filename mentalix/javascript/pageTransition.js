@@ -35,7 +35,7 @@ var fleche9 = document.getElementById('fleche9');
 
 window.onload = function () {
     //closableConcernByClosable1.style.display = "none";
-    document.getElementById("fleche1").className = "fas fa-angle-right fa-rotate-90";
+    //document.getElementById("fleche1").className = "fas fa-angle-right fa-rotate-90";
 
 };
 
@@ -46,13 +46,17 @@ window.onload = function () {
 
 closable1.addEventListener('click', function () {
     //console.log("closable1.addEventListener "+closableConcernByClosable1.style.display);
-    if (closableConcernByClosable1.style.display == "none") {
-        closableConcernByClosable1.style.display = "block";
-        document.getElementById("fleche1").className = "fas fa-angle-right";
-    } else {
+    if (closableConcernByClosable1.style.display == "block") {
         closableConcernByClosable1.style.display = "none";
         document.getElementById("fleche1").className = "fas fa-angle-right fa-rotate-90";
+    } else if (closableConcernByClosable1.style.display == "none") {
+        closableConcernByClosable1.style.display = "block";
+        document.getElementById("fleche1").className = "fas fa-angle-right";
+    } else if (closableConcernByClosable1.style.display == "") {
+        closableConcernByClosable1.style.display = "block";
+        document.getElementById("fleche1").className = "fas fa-angle-right fa-rotate-90";
 
+    } else {
     }
 });
 
