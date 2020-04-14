@@ -13,6 +13,11 @@ console.log("musicStore :"+idElement);
 								document.getElementById('OuiCompte').style.display = 'none' //Faire disparaître la div OuiCompte
 								document.getElementById('PasCompte').style.display = 'none' //Faire disparaître la div PasCompte
 								x.play();  //On joue la musique
+                                document.getElementById('pause').style.display='inline';
+                                document.getElementById('musiqueMaëstro').style.display='inline';
+                                document.getElementById('boutonVisibleApllicationBasPauseAudio').style.display='inline';
+                                document.getElementById('boutonVisibleApllicationBasReprendreLaMusique').style.display='inline';
+                                document.getElementById('pauseMentale').style.display='inline';                   
 		}
 		
 		function pauseAudio(){
