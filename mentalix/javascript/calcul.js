@@ -94,38 +94,50 @@ boutonAntitriche.addEventListener("click", function vaEtVient() { //Quand on cli
     //console.log("clic");// Afficher clic à la console
 );
 
+var nbEnter = 0;
+
 function entreeToCheck() {
+    nbEnter = nbEnter + 1;
+    if (nbEnter == 1) {
+        nb1 = Number(document.getElementById("nb1").textContent); // On lui dit d'afficher nb1 dans la zone nb1
+        nb2 = Number(document.getElementById("nb2").textContent); // On lui dit d'afficher nb2 dans la zone nb2
+        if (nb1 + nb2 == document.getElementById("texte").value) // Si nb1+nb2 est bien le bon résultat
+        {
+            document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
+            calculScore(); // On appelle la fonction score
+            document.getElementById('check').style.display = 'none' //On fait disparaître le bouton check
+            //calculSuivant();
+        } else //sinon
+        {
+            document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
+            document.getElementById('check').style.display = 'none' //On fait disparaître le bouton check
+            //calculSuivant();
+        }
 
-    nb1 = Number(document.getElementById("nb1").textContent); // On lui dit d'afficher nb1 dans la zone nb1
-    nb2 = Number(document.getElementById("nb2").textContent); // On lui dit d'afficher nb2 dans la zone nb2
-    if (nb1 + nb2 == document.getElementById("texte").value) // Si nb1+nb2 est bien le bon résultat
-    {
-        document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
-        calculScore(); // On appelle la fonction score
-        document.getElementById('check').style.display = 'none' //On fait disparaître le bouton check
-        //calculSuivant();
-    } else //sinon
-    {
-        document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
-        document.getElementById('check').style.display = 'none' //On fait disparaître le bouton check
-        //calculSuivant();
-    }
-
-    if (document.getElementById('invisible').style.display == 'none') { //Si le bouton caché est invisible 
-        //document.getElementById('check').style.display = 'none' //On fait disparaître le bouton check
-        document.getElementById('invisible').style.display = 'block'; //Alors on le fait apparaître
-    } else { //Sinon
-        //document.getElementById('invisible').style.display = 'none'; //Le bouton devient invisible quand on clique sur le bouton calcul suivant
+        if (document.getElementById('invisible').style.display == 'none') { //Si le bouton caché est invisible 
+            //document.getElementById('check').style.display = 'none' //On fait disparaître le bouton check
+            document.getElementById('invisible').style.display = 'block'; //Alors on le fait apparaître
+        } else { //Sinon
+            //document.getElementById('invisible').style.display = 'none'; //Le bouton devient invisible quand on clique sur le bouton calcul suivant
+        }
     }
     
+    if (nbEnter>1) {
+            calculSuivant();
+            nbEnter=0;
+    }
+
     /*if (event.keyCode == 13)
         {
             calculSuivant();
         }*/
-    
+
     //calculSuivant(); //On appelle la fonction calcul suivant
 
 }; // Quand bouton check a été cliqué alors on fait apparaître le bouton sinon on le fait disparaître
+
+
+
 //console.log("clic");// Afficher clic à la console
 
 
