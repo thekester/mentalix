@@ -20,6 +20,7 @@ JeNenVeuxPas.addEventListener("click", function () {
     document.getElementById('pause').style.display = 'none'; //Faire disparaître la div CompteOuPas
     document.getElementById('boutonVisibleApllicationBasPauseAudio').style.display = 'none'; /*Faire disparaître le boutonVisibleApllicationBasPauseAudio  */
     document.getElementById('boutonVisibleApllicationBasReprendreLaMusique').style.display = 'none'; /*Faire disparaître le boutonVisibleApllicationBasReprendreLaMusique */
+    pauseAudio();
 });
 
 var compte = document.getElementById('Compte');
