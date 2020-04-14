@@ -3,6 +3,7 @@
     border-bottom: 1px solid #d2d2d2;
     cursor: pointer;
     position: relative;
+    text-align: center;
 }
 
 
@@ -90,39 +91,54 @@
 #closableConcernByClosable2
 {
     display:none;
+    text-align: center;
 }
 
 #closableConcernByClosable3
 {
     display:none;
+    text-align: center;
+
 }
 
 #closableConcernByClosable4
 {
     display:none;
+    text-align: center;
+
 }
 
 #closableConcernByClosable5
 {
     display:none;
+    text-align: center;
+
 }
 
 #closableConcernByClosable6
 {
     display:none;
+    text-align: center;
+
 }
 
 #closableConcernByClosable7
 {
     display:none;
+    text-align: center;
+
 }
 
 #closableConcernByClosable8
 {
     display:none;
+    text-align: center;
+
 }
 
 #closableConcernByClosable9
 {
     display:none;
+    text-align: center;
+
 }

@@ -59,10 +59,9 @@ closable1.addEventListener('click', function () {
     if (closableConcernByClosable1.style.display == "") {
         closableConcernByClosable1.style.display = "block";
         document.getElementById("fleche1").className = "fas fa-angle-right fa-rotate-90";
-
     }
 
-    if (document.getElementById("fleche1").className == "fas fa-angle-right fa-rotate-90") {
+    else if (document.getElementById("fleche1").className == "fas fa-angle-right fa-rotate-90") {
         closableConcernByClosable1.style.display = "none";
         document.getElementById("fleche1").className = "fas fa-angle-right";
     } else if (document.getElementById("fleche1").className == "fas fa-angle-right") {
@@ -86,96 +85,160 @@ closable1.addEventListener('click', function () {
 
 closable2.addEventListener('click', function () {
     //console.log("closable1.addEventListener "+closableConcernByClosable1.style.display);
-    if (closableConcernByClosable2.style.display == "none") {
+    if (closableConcernByClosable2.style.display == "") {
         closableConcernByClosable2.style.display = "block";
-        document.getElementById("fleche2").className = "fas fa-angle-right";
-    } else {
-        closableConcernByClosable2.style.display = "none";
         document.getElementById("fleche2").className = "fas fa-angle-right fa-rotate-90";
-
     }
+
+    else if (document.getElementById("fleche2").className == "fas fa-angle-right fa-rotate-90") {
+        closableConcernByClosable2.style.display = "none";
+        document.getElementById("fleche2").className = "fas fa-angle-right";
+    } else if (document.getElementById("fleche2").className == "fas fa-angle-right") {
+        closableConcernByClosable2.style.display = "block";
+        document.getElementById("fleche2").className = "fas fa-angle-right fa-rotate-90";
+    }
+    else
+        {
+            
+        }
 });
 
 closable3.addEventListener('click', function () {
     //console.log("closable1.addEventListener "+closableConcernByClosable1.style.display);
-    if (closableConcernByClosable3.style.display == "block") {
-        closableConcernByClosable3.style.display = "none";
-        document.getElementById("fleche3").className = "fas fa-angle-right fa-rotate-90";
-    } else {
+    if (closableConcernByClosable3.style.display == "") {
         closableConcernByClosable3.style.display = "block";
-        document.getElementById("fleche3").className = "fas fa-angle-right";
-
+        document.getElementById("fleche3").className = "fas fa-angle-right fa-rotate-90";
     }
+
+    else if (document.getElementById("fleche3").className == "fas fa-angle-right fa-rotate-90") {
+        closableConcernByClosable3.style.display = "none";
+        document.getElementById("fleche3").className = "fas fa-angle-right";
+    } else if (document.getElementById("fleche3").className == "fas fa-angle-right") {
+        closableConcernByClosable3.style.display = "block";
+        document.getElementById("fleche3").className = "fas fa-angle-right fa-rotate-90";
+    }
+    else
+        {
+            
+        }
 });
 
 closable4.addEventListener('click', function () {
     //console.log("closable1.addEventListener "+closableConcernByClosable1.style.display);
-    if (closableConcernByClosable4.style.display == "block") {
-        closableConcernByClosable4.style.display = "none";
-        document.getElementById("fleche4").className = "fas fa-angle-right fa-rotate-90";
-    } else {
+    if (closableConcernByClosable4.style.display == "") {
         closableConcernByClosable4.style.display = "block";
-        document.getElementById("fleche4").className = "fas fa-angle-right";
-
+        document.getElementById("fleche4").className = "fas fa-angle-right fa-rotate-90";
     }
+
+    else if (document.getElementById("fleche4").className == "fas fa-angle-right fa-rotate-90") {
+        closableConcernByClosable4.style.display = "none";
+        document.getElementById("fleche4").className = "fas fa-angle-right";
+    } else if (document.getElementById("fleche4").className == "fas fa-angle-right") {
+        closableConcernByClosable4.style.display = "block";
+        document.getElementById("fleche4").className = "fas fa-angle-right fa-rotate-90";
+    }
+    else
+        {
+            
+        }
 });
 
 closable5.addEventListener('click', function () {
     //console.log("closable1.addEventListener "+closableConcernByClosable1.style.display);
-    if (closableConcernByClosable5.style.display == "block") {
-        closableConcernByClosable5.style.display = "none";
-        document.getElementById("fleche5").className = "fas fa-angle-right fa-rotate-90";
-    } else {
+    if (closableConcernByClosable5.style.display == "") {
         closableConcernByClosable5.style.display = "block";
-        document.getElementById("fleche5").className = "fas fa-angle-right";
-
+        document.getElementById("fleche5").className = "fas fa-angle-right fa-rotate-90";
     }
+
+    else if (document.getElementById("fleche5").className == "fas fa-angle-right fa-rotate-90") {
+        closableConcernByClosable5.style.display = "none";
+        document.getElementById("fleche5").className = "fas fa-angle-right";
+    } else if (document.getElementById("fleche5").className == "fas fa-angle-right") {
+        closableConcernByClosable5.style.display = "block";
+        document.getElementById("fleche5").className = "fas fa-angle-right fa-rotate-90";
+    }
+    else
+        {
+            
+        }
 });
 
 closable6.addEventListener('click', function () {
     //console.log("closable1.addEventListener "+closableConcernByClosable1.style.display);
-    if (closableConcernByClosable6.style.display == "block") {
-        closableConcernByClosable6.style.display = "none";
-        document.getElementById("fleche6").className = "fas fa-angle-right fa-rotate-90";
-    } else {
+    if (closableConcernByClosable6.style.display == "") {
         closableConcernByClosable6.style.display = "block";
-        document.getElementById("fleche6").className = "fas fa-angle-right";
-
+        document.getElementById("fleche6").className = "fas fa-angle-right fa-rotate-90";
     }
+
+    else if (document.getElementById("fleche6").className == "fas fa-angle-right fa-rotate-90") {
+        closableConcernByClosable6.style.display = "none";
+        document.getElementById("fleche6").className = "fas fa-angle-right";
+    } else if (document.getElementById("fleche6").className == "fas fa-angle-right") {
+        closableConcernByClosable6.style.display = "block";
+        document.getElementById("fleche6").className = "fas fa-angle-right fa-rotate-90";
+    }
+    else
+        {
+            
+        }
 });
 
 closable7.addEventListener('click', function () {
     //console.log("closable1.addEventListener "+closableConcernByClosable1.style.display);
-    if (closableConcernByClosable7.style.display == "block") {
-        closableConcernByClosable7.style.display = "none";
-        document.getElementById("fleche7").className = "fas fa-angle-right fa-rotate-90";
-    } else {
+    if (closableConcernByClosable7.style.display == "") {
         closableConcernByClosable7.style.display = "block";
-        document.getElementById("fleche7").className = "fas fa-angle-right";
-
+        document.getElementById("fleche7").className = "fas fa-angle-right fa-rotate-90";
     }
+
+    else if (document.getElementById("fleche7").className == "fas fa-angle-right fa-rotate-90") {
+        closableConcernByClosable7.style.display = "none";
+        document.getElementById("fleche7").className = "fas fa-angle-right";
+    } else if (document.getElementById("fleche7").className == "fas fa-angle-right") {
+        closableConcernByClosable7.style.display = "block";
+        document.getElementById("fleche7").className = "fas fa-angle-right fa-rotate-90";
+    }
+    else
+        {
+            
+        }
 });
 
 closable8.addEventListener('click', function () {
     //console.log("closable1.addEventListener "+closableConcernByClosable1.style.display);
-    if (closableConcernByClosable8.style.display == "block") {
-        closableConcernByClosable8.style.display = "none";
-        document.getElementById("fleche8").className = "fas fa-angle-right fa-rotate-90";
-    } else {
+    if (closableConcernByClosable8.style.display == "") {
         closableConcernByClosable8.style.display = "block";
-        document.getElementById("fleche8").className = "fas fa-angle-right";
-
+        document.getElementById("fleche8").className = "fas fa-angle-right fa-rotate-90";
     }
+
+    else if (document.getElementById("fleche8").className == "fas fa-angle-right fa-rotate-90") {
+        closableConcernByClosable8.style.display = "none";
+        document.getElementById("fleche8").className = "fas fa-angle-right";
+    } else if (document.getElementById("fleche8").className == "fas fa-angle-right") {
+        closableConcernByClosable8.style.display = "block";
+        document.getElementById("fleche8").className = "fas fa-angle-right fa-rotate-90";
+    }
+    else
+        {
+            
+        }
 });
 
 closable9.addEventListener('click', function () {
     //console.log("closable1.addEventListener "+closableConcernByClosable1.style.display);
-    if (closableConcernByClosable9.style.display == "block") {
-        closableConcernByClosable9.style.display = "none";
-        document.getElementById("fleche9").className = "fas fa-angle-right fa-rotate-90";
-    } else {
+    if (closableConcernByClosable9.style.display == "") {
         closableConcernByClosable9.style.display = "block";
-        document.getElementById("fleche9").className = "fas fa-angle-right";
-
+        document.getElementById("fleche9").className = "fas fa-angle-right fa-rotate-90";
     }
+
+    else if (document.getElementById("fleche9").className == "fas fa-angle-right fa-rotate-90") {
+        closableConcernByClosable9.style.display = "none";
+        document.getElementById("fleche9").className = "fas fa-angle-right";
+    } else if (document.getElementById("fleche9").className == "fas fa-angle-right") {
+        closableConcernByClosable9.style.display = "block";
+        document.getElementById("fleche9").className = "fas fa-angle-right fa-rotate-90";
+    }
+    else
+        {
+            
+        }
 });
