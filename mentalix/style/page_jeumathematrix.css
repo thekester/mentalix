@@ -108,3 +108,8 @@ section {
     margin: auto;
 
 }
+
+#haut_gauche
+{
+    display:none;
+}

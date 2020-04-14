@@ -1,0 +1,21 @@
+@media screen and (max-width: 420px) {
+
+    #haut
+    {
+        display: block;
+    }
+    
+    #haut_gauche
+    {
+         display: flex;
+         flex-direction:column; 
+    }
+    
+    .disparitionQuanTropPetit
+    {
+        display:none;
+    }
+    
+
+    
+}
