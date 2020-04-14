@@ -45,9 +45,9 @@ function calculSuivant() { //La fonction calcul suivant
     document.getElementById("reponse").innerHTML = "<br />"; // On lui dit de ne plus afficher le vrai ou faux
     document.getElementById("texte").value = ""; //On lui dit de ne pas garder la réponse précédente que l'utilisateur a tapé
     document.getElementById('check').style.display = 'block' //On fait disparaître le bouton check
-    var nb1 = Math.floor(Math.random() * 8); //On lui dit que nombre 1 est un nombre à tirer aléatoirement de 1 à 9
+    var nb1 = Math.floor(Math.random() * 11); //On lui dit que nombre 1 est un nombre à tirer aléatoirement de 1 à 10
     var signe = "+"; // On lui dit de mettre le signe + entre nb1et nb2
-    var nb2 = Math.floor(Math.random() * 8); //On lui dit que nombre 1 est un nombre à tirer aléatoirement de 1 à 9
+    var nb2 = Math.floor(Math.random() * 11); //On lui dit que nombre 1 est un nombre à tirer aléatoirement de 1 à 10
     //document.getElementById("calcul").textContent=nb1 + signe + nb2; // On lui dit de nous afficher nb1 tiré aléatoirement + le signe+ et enfin nb2 tiré aléatoirement
     document.getElementById("nb1").textContent = nb1; // On lui dit d'afficher le nouveau nb1 dans la zone nb1
     document.getElementById("op").textContent = signe; // On lui dit d'afficher le signe d'opération + dans la zone op
