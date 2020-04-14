@@ -44,20 +44,44 @@ window.onload = function () {
 //console.log(closable1);
 //sconsole.log(closableConcernByClosable1);
 
+var compteur = 0;
+
 closable1.addEventListener('click', function () {
+
+    compteur = compteur + 1;
     //console.log("closable1.addEventListener "+closableConcernByClosable1.style.display);
-    if (closableConcernByClosable1.style.display == "block") {
+    /*if (closableConcernByClosable1.style.display == "block") {
         closableConcernByClosable1.style.display = "none";
         document.getElementById("fleche1").className = "fas fa-angle-right fa-rotate-90";
     } else if (closableConcernByClosable1.style.display == "none") {
         closableConcernByClosable1.style.display = "block";
-        document.getElementById("fleche1").className = "fas fa-angle-right";
-    } else if (closableConcernByClosable1.style.display == "") {
+        document.getElementById("fleche1").className = "fas fa-angle-right";*/
+    if (closableConcernByClosable1.style.display == "") {
         closableConcernByClosable1.style.display = "block";
         document.getElementById("fleche1").className = "fas fa-angle-right fa-rotate-90";
 
-    } else {
     }
+
+    if (document.getElementById("fleche1").className == "fas fa-angle-right fa-rotate-90") {
+        closableConcernByClosable1.style.display = "none";
+        document.getElementById("fleche1").className = "fas fa-angle-right";
+    } else if (document.getElementById("fleche1").className == "fas fa-angle-right") {
+        closableConcernByClosable1.style.display = "block";
+        document.getElementById("fleche1").className = "fas fa-angle-right fa-rotate-90";
+    }
+    else
+        {
+            
+        }
+
+
+
+    /*if(compteur==2)
+        {
+            document.getElementById("fleche1").className = "fas fa-angle-right";
+            compteur=compteur+1;
+
+        }*/
 });
 
 closable2.addEventListener('click', function () {
