@@ -7,8 +7,12 @@ var closableConcernByClosable2 = document.getElementById('closableConcernByClosa
 var fleche2 = document.getElementById('fleche2');
 
 var closable3 = document.getElementById('closable3');
-var closableConcernByClosable4 = document.getElementById('closableConcernByClosable3');
-var fleche4 = document.getElementById('fleche4');
+var closableConcernByClosable3 = document.getElementById('closableConcernByClosable3');
+var fleche3 = document.getElementById('fleche3');
+
+var closable5 = document.getElementById('closable4');
+var closableConcernByClosable5 = document.getElementById('closableConcernByClosable4');
+var fleche5 = document.getElementById('fleche4');
 
 var closable5 = document.getElementById('closable5');
 var closableConcernByClosable5 = document.getElementById('closableConcernByClosable5');

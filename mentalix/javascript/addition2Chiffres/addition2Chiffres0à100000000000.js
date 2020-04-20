@@ -1,3 +1,7 @@
+/* eslint-env browser */
+
+/* jslint white:true, browser:true, devel:true */
+
 var nombre = document.getElementById('check');
 nombre.addEventListener("click", function () {
     nb1 = Number(document.getElementById("nb1").textContent); // On lui dit d'afficher nb1 dans la zone nb1

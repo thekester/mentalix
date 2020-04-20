@@ -2,6 +2,7 @@ var nombre = document.getElementById('check');
 nombre.addEventListener("click", function () {
     nb1 = Number(document.getElementById("nb1").textContent); // On lui dit d'afficher nb1 dans la zone nb1
     nb2 = Number(document.getElementById("nb2").textContent); // On lui dit d'afficher nb2 dans la zone nb2
+    
     if (nb1 + nb2 == document.getElementById("texte").value) // Si nb1+nb2 est bien le bon résultat
     {
         document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
