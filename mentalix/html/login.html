@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" href="../style/login.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form_container">
+            <div class="button_group">
+                <div id="btn">
+                    <div>
+                        <button type="button" class="toggle_btn" onclick = "login()">LOG IN</button>
+                    </div>
+                    <div>
+                     <button type="button" class="toggle_btn" onclick = "register()">REGISTER</button>
+                    </div>
+                </div>
+            </div>
+            <form id="login" class="form_group">
+                <input type="text" class="input_area" placeholder="User_name" required>
+                <input type="text" class="input_area" placeholder="Enter Password" required>
+                <input type="checkbox" class="check_box"><span>Remember Password</span>
+                <button type="submit" class="sub_btn">LOG_IN</button>
+            </form>
+            <form id="register" class="form_group">
+                <input type="text" class="input_area" placeholder="User_name" required>
+                <input type="text" class="input_area" placeholder="Enter Email" required>
+                <input type="text" class="input_area" placeholder="Enter Password" required>
+                <input type="checkbox" class="check_box"><span>
+                    I agree with all the terms and conditions 
+                </span>
+                <button type="submit" class="sub_btn">REGISTER</button>
+            </form>
+
+        </div>
+
+    </div>
+    <script src="../javascript/login.js"></script>
+</body>
+</html>
