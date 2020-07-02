@@ -158,10 +158,12 @@
     <?php
         $MINIMUM=$_POST['number1'];
         $MAXIMUM=$_POST['number2'];
+        $OPERATION=$_POST['op'];
     ?>
 
     <p class="none" id="minimumIntervalle"><?=$MINIMUM?></p>
     <p class="none" id="maximumIntervalle"><?=$MAXIMUM?></p>
+    <p class="none" id="operationCalcul"><?=$OPERATION?></p>
 
     <script src="../../javascript/filtreNoir.js"> </script> <!-- Fin du code javascript pour tout le site -->
     <script src="../../javascript/chronometreeasy.js"></script> <!-- Le lien vers la partie chronomètre -->

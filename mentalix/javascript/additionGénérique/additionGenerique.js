@@ -16,6 +16,7 @@ var scoreCalcul;
 var signe;
 var minimumIntervalle = Number(document.getElementById('minimumIntervalle').textContent);
 var maximumIntervalle = Number(document.getElementById('maximumIntervalle').textContent);
+var op =  document.getElementById('operationCalcul').textContent;
 
 
 function calculScore() { //La fonction de calcul du score
@@ -31,17 +32,56 @@ nombre.addEventListener("click", function () {
     "use strict";
     nb1 = Number(document.getElementById("nb1").textContent); // On lui dit d'afficher nb1 dans la zone nb1
     nb2 = Number(document.getElementById("nb2").textContent); // On lui dit d'afficher nb2 dans la zone nb2
-    if (nb1 + nb2 == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
-        document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
-        calculScore(); // On appelle la fonction score
-        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
-        //calculSuivant();
-    } else { //sinon
-        document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
-        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
-        //calculSuivant();
+    switch(op){
+        case"addition":
+            if (nb1 + nb2 == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
+                document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
+                calculScore(); // On appelle la fonction score
+                document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                //calculSuivant();
+            } else { //sinon
+                document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
+                document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                //calculSuivant();
+            }
+        break;
+        case"soustraction":
+            if (nb1 - nb2 == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
+                document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
+                calculScore(); // On appelle la fonction score
+                document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                //calculSuivant();
+             } else { //sinon
+                document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
+                document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                //calculSuivant();
+            }
+        break;
+        case "multiplication":
+            if (nb1 * nb2 == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
+                document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
+                calculScore(); // On appelle la fonction score
+                document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                //calculSuivant();
+             } else { //sinon
+                document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
+                document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                //calculSuivant();
+            }
+        break;
+        case"division":
+            if (nb1 / nb2 == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
+                document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
+                calculScore(); // On appelle la fonction score
+                document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                //calculSuivant();
+            } else { //sinon
+                document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
+                document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                //calculSuivant();
+            }
+        break;
     }
-
 });
 
 
@@ -65,7 +105,17 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
 
     nb1 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
     //nb1 = Math.floor(Math.random() * 11); //On lui dit que nombre 1 est un nombre à tirer aléatoirement de 0 à nb1
-    signe = "+"; // On lui dit de mettre le signe + entre nb1et nb2
+
+    switch(op){
+        case"addition": signe="+"; break;
+        case"soustraction": signe="-"; break;
+        case "multiplication": signe="*"; break;
+        case"division": signe="/"; break;
+    }
+
+    //signe = "+"; // On lui dit de mettre le signe + entre nb1et nb2
+
+
     nb2 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
 
     //nb2 = Math.floor(Math.random() * 11); //On lui dit que nombre 1 est un nombre à tirer aléatoirement de 0 à nb2
@@ -98,25 +148,90 @@ function entreeToCheck() {
     nbEnter = nbEnter + 1;
     if (nbEnter === 1) {
         nb1 = Number(document.getElementById("nb1").textContent); // On lui dit d'afficher nb1 dans la zone nb1
-        nb2 = Number(document.getElementById("nb2").textContent); // On lui dit d'afficher nb2 dans la zone nb2
-        if (nb1 + nb2 == document.getElementById("texte").value) // Si nb1+nb2 est bien le bon résultat
-        {
-            document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
-            calculScore(); // On appelle la fonction score
-            document.getElementById('check').style.display = 'none' //On fait disparaître le bouton check
-            //calculSuivant();
-        } else //sinon
-        {
-            document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
-            document.getElementById('check').style.display = 'none' //On fait disparaître le bouton check
-            //calculSuivant();
-        }
 
-        if (document.getElementById('invisible').style.display == 'none') { //Si le bouton caché est invisible 
-            //document.getElementById('check').style.display = 'none' //On fait disparaître le bouton check
-            document.getElementById('invisible').style.display = 'block'; //Alors on le fait apparaître
-        } else { //Sinon
-            //document.getElementById('invisible').style.display = 'none'; //Le bouton devient invisible quand on clique sur le bouton calcul suivant
+        nb2 = Number(document.getElementById("nb2").textContent); // On lui dit d'afficher nb2 dans la zone nb2
+        console.log("op vaut ici "+op);
+        switch(op){
+            case"addition":
+                if (nb1 + nb2 == document.getElementById("texte").value) // Si nb1+nb2 est bien le bon résultat
+                {
+                    document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
+                    calculScore(); // On appelle la fonction score
+                    document.getElementById('check').style.display = 'none' //On fait disparaître le bouton check
+                    //calculSuivant();
+                } else //sinon
+                {
+                    document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
+                    document.getElementById('check').style.display = 'none' //On fait disparaître le bouton check
+                    //calculSuivant();
+                }
+                if (document.getElementById('invisible').style.display == 'none') { //Si le bouton caché est invisible 
+                    //document.getElementById('check').style.display = 'none' //On fait disparaître le bouton check
+                    document.getElementById('invisible').style.display = 'block'; //Alors on le fait apparaître
+                } else { //Sinon
+                    //document.getElementById('invisible').style.display = 'none'; //Le bouton devient invisible quand on clique sur le bouton calcul suivant
+                }
+            break;
+            case"soustraction":
+                if (nb1 + nb2 == document.getElementById("texte").value) // Si nb1+nb2 est bien le bon résultat
+                {
+                    document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
+                    calculScore(); // On appelle la fonction score
+                    document.getElementById('check').style.display = 'none' //On fait disparaître le bouton check
+                    //calculSuivant();
+                } else //sinon
+                {
+                    document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
+                    document.getElementById('check').style.display = 'none' //On fait disparaître le bouton check
+                    //calculSuivant();
+                }
+                if (document.getElementById('invisible').style.display == 'none') { //Si le bouton caché est invisible 
+                    //document.getElementById('check').style.display = 'none' //On fait disparaître le bouton check
+                    document.getElementById('invisible').style.display = 'block'; //Alors on le fait apparaître
+                } else { //Sinon
+                    //document.getElementById('invisible').style.display = 'none'; //Le bouton devient invisible quand on clique sur le bouton calcul suivant
+                }
+            break;            
+            case "multiplication":
+                if (nb1 * nb2 == document.getElementById("texte").value) // Si nb1+nb2 est bien le bon résultat
+                {
+                    document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
+                    calculScore(); // On appelle la fonction score
+                    document.getElementById('check').style.display = 'none' //On fait disparaître le bouton check
+                    //calculSuivant();
+                } else //sinon
+                {
+                    document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
+                    document.getElementById('check').style.display = 'none' //On fait disparaître le bouton check
+                    //calculSuivant();
+                }
+                if (document.getElementById('invisible').style.display == 'none') { //Si le bouton caché est invisible 
+                    //document.getElementById('check').style.display = 'none' //On fait disparaître le bouton check
+                    document.getElementById('invisible').style.display = 'block'; //Alors on le fait apparaître
+                } else { //Sinon
+                    //document.getElementById('invisible').style.display = 'none'; //Le bouton devient invisible quand on clique sur le bouton calcul suivant
+                }
+            break;   
+            case"division":
+                if (nb1 / nb2 == document.getElementById("texte").value) // Si nb1+nb2 est bien le bon résultat
+                {
+                    document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
+                    calculScore(); // On appelle la fonction score
+                    document.getElementById('check').style.display = 'none' //On fait disparaître le bouton check
+                    //calculSuivant();
+                } else //sinon
+                {
+                    document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
+                    document.getElementById('check').style.display = 'none' //On fait disparaître le bouton check
+                    //calculSuivant();
+                }
+                if (document.getElementById('invisible').style.display == 'none') { //Si le bouton caché est invisible 
+                    //document.getElementById('check').style.display = 'none' //On fait disparaître le bouton check
+                    document.getElementById('invisible').style.display = 'block'; //Alors on le fait apparaître
+                } else { //Sinon
+                    //document.getElementById('invisible').style.display = 'none'; //Le bouton devient invisible quand on clique sur le bouton calcul suivant
+                }
+            break;   
         }
     }
 
