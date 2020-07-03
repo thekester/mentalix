@@ -35,12 +35,35 @@
             <label for="op-select">Quel opération?</label>
 
             <select name="op" id="opID">
-                <option value="0">--Choisissez une opération--</option>
+                <option value="0" default>--Choisissez une opération--</option>
                 <option value="addition">Addition</option>
                 <option value="soustraction">Soustraction</option>
                 <option value="multiplication">Multiplication</option>
                 <option value="division">Division</option>
             </select>
+        </div>
+
+
+        <div id="divOptSoustraction">
+            <div id="divPositive">
+                <input type="checkbox" id="soustractionPositive" name="soustractionPositive" checked>
+                <label for="positive">Positive</label>
+            </div>
+            <div id="divNegative">
+                <input type="checkbox" id="soustractionNegative" name="soustractionNegative">
+                <label for="negative">Négative</label>
+            </div>
+        </div>
+
+        <div id="divOptDivison">
+            <div id="divEuclidienne">
+                <input type="checkbox" id="divisionEuclidienne" name="divisionEuclidienne" checked>
+                <label for="euclidienne">Division Euclidienne</label>
+            </div>
+            <div id="divDecimale">
+                <input type="checkbox" id="divisionDecimale" name="divisionDecimale">
+                <label for="decimale">Division Décimale</label>
+</div>
         </div>
 
         <div id="div3">
@@ -90,11 +113,10 @@
 
 
 <?php
-    //echo '<p>Bonjour le monde</p>'; 
-
-    //$_POST[nb1TransmisATouteLesPages]);
-//$_POST[nb2TransmisATouteLesPages]);
 ?>
+
+<p class="none" id="operationCalcul"><?=$OPERATION?></p>
+
 
 <script src="../javascript/obtenirVariables.js"></script>
 

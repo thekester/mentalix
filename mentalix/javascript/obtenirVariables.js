@@ -14,6 +14,18 @@ var go = document.getElementById("Go");
 var nbListe = document.getElementById("nbID");
 
 var opListe = document.getElementById("opID");
+var op  = opListe.selectedIndex;
+
+console.log("op :"+op);
+
+
+var divPositive = document.getElementById("divPositive");
+var divNegative = document.getElementById("divNegative");
+var divEuclidienne = document.getElementById("divEuclidienne");
+var divDecimale = document.getElementById("divDecimale");
+
+var optionSoustraction = document.getElementById("divOptSoustraction");
+var optionDivision = document.getElementById("divOptDivison");
 
 var message1 = document.getElementById("messageRougeNb");
 var message2 = document.getElementById("messageRougeOp");
@@ -22,6 +34,66 @@ var message4 = document.getElementById("messageRougeNb1");
 var message5 = document.getElementById("messageRougeNb2");
 var message6 = document.getElementById("messageRougeComparaisonEntreNb1EtNb2");
 
+
+switch(op){
+    case 0:
+        optionSoustraction.style.display = 'none';
+        optionDivision.style.display = 'none';
+    break;
+    case 1:
+        optionSoustraction.style.display = 'none';
+        optionDivision.style.display = 'none';
+    break;
+    case 2:
+        optionSoustraction.style.display = 'flex';
+        optionSoustraction.style.marginTop = '3%';
+        optionDivision.style.display = 'none';
+
+    break;
+    case 3:
+        optionSoustraction.style.display = 'none';
+        optionDivision.style.display = 'none';
+
+    break;
+    case 4:
+        optionSoustraction.style.display= 'none';
+        optionDivision.style.display='flex';
+        optionDivision.style.marginTop = '3%';
+    break;
+}
+opListe.addEventListener("change", function () {
+    var op  = opListe.selectedIndex;
+
+    console.log("op :"+op);
+    switch(op){
+        case 0:
+            optionSoustraction.style.display = 'none';
+            optionDivision.style.display = 'none';
+        break;
+        case 1:
+            optionSoustraction.style.display = 'none';
+            optionDivision.style.display = 'none';
+        break;
+        case 2:
+            optionSoustraction.style.display = 'flex';
+            optionSoustraction.style.marginTop = '3%';
+            optionDivision.style.display = 'none';
+
+        break;
+        case 3:
+            optionSoustraction.style.display = 'none';
+            optionDivision.style.display = 'none';
+
+        break;
+        case 4:
+            optionSoustraction.style.display= 'none';
+            optionDivision.style.display='flex';
+            optionDivision.style.marginTop = '3%';
+        break;
+    }
+
+
+});
 
 go.addEventListener("click", function () {
     var nb = nbListe.selectedIndex;
