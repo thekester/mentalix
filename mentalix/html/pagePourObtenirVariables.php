@@ -12,7 +12,7 @@
 
 <div id="divGlobale">
 
-    <form action="additionGenerique/additionGenerique.php" method="post" id="formTest">
+    <form action="additionGenerique/additionGenerique.php" method="post" id="formTest" name="formObtenirVariable">
         <div id="div1">
 
             <label for="nb-select">Combien de nombres?</label>
@@ -44,24 +44,24 @@
         </div>
 
 
-        <div id="divOptSoustraction">
-            <div id="divPositive">
-                <input type="checkbox" id="soustractionPositive" name="soustractionPositive" checked>
+        <div id="divOptSoustractionIDDIV">
+            <div id="divPositiveIDDIV">
+                <input type="checkbox" id="soustractionPositiveID" name="soustractionPositiveHTMLNAME" checked>
                 <label for="positive">Positive</label>
             </div>
-            <div id="divNegative">
-                <input type="checkbox" id="soustractionNegative" name="soustractionNegative">
+            <div id="divNegativeIDDIV">
+                <input type="checkbox" id="soustractionNegativeID" name="soustractionNegativeHTMLNAME">
                 <label for="negative">Négative</label>
             </div>
         </div>
 
-        <div id="divOptDivison">
-            <div id="divEuclidienne">
-                <input type="checkbox" id="divisionEuclidienne" name="divisionEuclidienne" checked>
+        <div id="divOptDivisonIDDIV">
+            <div id="divEuclidienneIDDIV">
+                <input type="checkbox" id="divisionEuclidienneID" name="divisionEuclidienneHTMLNAME" checked>
                 <label for="euclidienne">Division Euclidienne</label>
             </div>
-            <div id="divDecimale">
-                <input type="checkbox" id="divisionDecimale" name="divisionDecimale">
+            <div id="divDecimaleIDDIV">
+                <input type="checkbox" id="divisionDecimaleID" name="divisionDecimaleHTMLNAME">
                 <label for="decimale">Division Décimale</label>
 </div>
         </div>
@@ -114,6 +114,7 @@
 
 <?php
 ?>
+
 
 <p class="none" id="operationCalcul"><?=$OPERATION?></p>
 

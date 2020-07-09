@@ -1,8 +1,3 @@
-
-
-
-
-
 <html lang="fr">
 <!-- On dit à l'ordinateur que notre page web est en français -->
 
@@ -159,11 +154,68 @@
         $MINIMUM=$_POST['number1'];
         $MAXIMUM=$_POST['number2'];
         $OPERATION=$_POST['op'];
+        switch ($OPERATION){
+            case "addition":
+            break;
+
+
+            case "soustraction":
+                if(isset($_POST['soustractionPositiveHTMLNAME']))
+                {
+                    $soustractionPositivePHP=$_POST['soustractionPositiveHTMLNAME'];
+                    $soustractionNegativePHP="undefined";
+                    $divisionEuclidiennePHP="undefined";
+                    $divisionDecimalePHP="undefined";
+                    /*?>
+                    <p class="none" id="soustractionPositiveOBTBYPHP"><?=$soustractionPositivePHP?></p>
+                    <?*/
+                }
+                else{
+                    $soustractionPositivePHP="undefined";
+                    $soustractionNegativePHP=$_POST['soustractionNegativeHTMLNAME'];
+                    $divisionEuclidiennePHP="undefined";
+                    $divisionDecimalePHP="undefined";
+                    /*?>
+                     <p class="none" id="soustractionNegativeOBTBYPHP"><?=$soustractionNegativePHP?></p>
+                    <?*/
+                }
+            break;
+
+            case "multiplication":
+            break;
+
+            case "division":
+                if(isset($_POST['divisionEuclidienneHTMLNAME']))
+                {
+                    $soustractionPositivePHP="undefined";
+                    $soustractionNegativePHP="undefined";
+                    $divisionEuclidiennePHP=$_POST['divisionEuclidienneHTMLNAME'];
+                    $divisionDecimalePHP="undefined";
+                    /*?>
+                    <p class="none" id="divisionEuclidienneOBTBYPHP"><?=$divisionEuclidiennePHP?></p>
+                    <?*/
+                }
+                else{
+                    $soustractionPositivePHP="undefined";
+                    $soustractionNegativePHP="undefined";
+                    $divisionEuclidiennePHP="undefined";
+                    $divisionDecimalePHP=$_POST['divisionDecimaleHTMLNAME'];
+                    /*?>
+                    <p class="none" id="divisionDecimaleOBTBYPHP"><?=$divisionDecimalePHP?></p>
+                    <?*/
+                }
+            break;
+
+        }
     ?>
 
     <p class="none" id="minimumIntervalle"><?=$MINIMUM?></p>
     <p class="none" id="maximumIntervalle"><?=$MAXIMUM?></p>
     <p class="none" id="operationCalcul"><?=$OPERATION?></p>
+    <p class="none" id="soustractionPositiveOBTBYPHP"><?=$soustractionPositivePHP?></p>
+    <p class="none" id="soustractionNegativeOBTBYPHP"><?=$soustractionNegativePHP?></p>
+    <p class="none" id="divisionEuclidienneOBTBYPHP"><?=$divisionEuclidiennePHP?></p>
+    <p class="none" id="divisionDecimaleOBTBYPHP"><?=$divisionDecimalePHP?></p>
 
     <script src="../../javascript/filtreNoir.js"> </script> <!-- Fin du code javascript pour tout le site -->
     <script src="../../javascript/chronometreeasy.js"></script> <!-- Le lien vers la partie chronomètre -->

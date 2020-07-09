@@ -19,13 +19,13 @@ var op  = opListe.selectedIndex;
 console.log("op :"+op);
 
 
-var divPositive = document.getElementById("divPositive");
-var divNegative = document.getElementById("divNegative");
-var divEuclidienne = document.getElementById("divEuclidienne");
-var divDecimale = document.getElementById("divDecimale");
+var divPositive = document.getElementById("divPositiveIDDIV");
+var divNegative = document.getElementById("divNegativeIDDIV");
+var divEuclidienne = document.getElementById("divEuclidienneIDDIV");
+var divDecimale = document.getElementById("divDecimaleIDDIV");
 
-var optionSoustraction = document.getElementById("divOptSoustraction");
-var optionDivision = document.getElementById("divOptDivison");
+var optionSoustraction = document.getElementById("divOptSoustractionIDDIV");
+var optionDivision = document.getElementById("divOptDivisonIDDIV");
 
 var message1 = document.getElementById("messageRougeNb");
 var message2 = document.getElementById("messageRougeOp");
