@@ -135,7 +135,6 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
     document.getElementById("reponse").innerHTML = "<br />"; // On lui dit de ne plus afficher le vrai ou faux
     document.getElementById("texte").value = ""; //On lui dit de ne pas garder la réponse précédente que l'utilisateur a tapé
     document.getElementById('check').style.display = 'block'; //On fait disparaître le bouton check
-    nb1 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
 
     switch(op){
         case"addition": signe="+"; break;
@@ -144,9 +143,17 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
         case"division": signe="/"; break;
     }
 
-
-
     nb2 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+
+
+//https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/localeCompare
+    if((soustractionPositive.localeCompare("undefined") ) == 0)
+    {
+        nb1 = Number(entierAleatoire(minimumIntervalle, nb2));
+    }
+    else{
+        nb1 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+    }
 
     document.getElementById("nb1").textContent = nb1; // On lui dit d'afficher le nouveau nb1 dans la zone nb1
     document.getElementById("op").textContent = signe; // On lui dit d'afficher le signe d'opération + dans la zone op
@@ -174,7 +181,6 @@ function entreeToCheck() {
     nbEnter = nbEnter + 1;
     if (nbEnter === 1) {
         nb1 = Number(document.getElementById("nb1").textContent); // On lui dit d'afficher nb1 dans la zone nb1
-
         nb2 = Number(document.getElementById("nb2").textContent); // On lui dit d'afficher nb2 dans la zone nb2
         console.log("op vaut ici "+op);
         switch(op){
@@ -229,6 +235,7 @@ function entreeToCheck() {
             break;   
             case"division":
             if(divisionEuclidienne!="undefined"){
+                //https://www.it-swarm.dev/fr/javascript/division-entiere-avec-reste-en-javascript/970450856/
                 if ((nb1 / nb2 |0) == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
                     document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                     calculScore(); // On appelle la fonction score
