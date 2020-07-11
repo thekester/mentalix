@@ -151,11 +151,16 @@
     </section> <!-- Fin du code de la partie du site excepté la bordure, ce qu'il y a en haut et en bas -->
 
     <?php
+        $NOMBRE=$_POST['nb'];
         $MINIMUM=$_POST['number1'];
         $MAXIMUM=$_POST['number2'];
         $OPERATION=$_POST['op'];
         switch ($OPERATION){
             case "addition":
+                $soustractionPositivePHP="undefined";
+                $soustractionNegativePHP="undefined";
+                $divisionEuclidiennePHP="undefined";
+                $divisionDecimalePHP="undefined";
             break;
 
 
@@ -209,6 +214,7 @@
         }
     ?>
 
+    <p class="none" id="nombre"> <?=$NOMBRE?> </p>
     <p class="none" id="minimumIntervalle"><?=$MINIMUM?></p>
     <p class="none" id="maximumIntervalle"><?=$MAXIMUM?></p>
     <p class="none" id="operationCalcul"><?=$OPERATION?></p>

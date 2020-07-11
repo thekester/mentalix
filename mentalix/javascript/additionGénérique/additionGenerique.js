@@ -16,6 +16,10 @@ var scoreCalcul;
 var signe;
 var minimumIntervalle = Number(document.getElementById('minimumIntervalle').textContent);
 var maximumIntervalle = Number(document.getElementById('maximumIntervalle').textContent);
+var nombre = Number(document.getElementById('nombre').textContent);
+console.log("IL faut"+nombre+"pour le calcul");
+
+
 var op =  document.getElementById('operationCalcul').textContent;
 var checkbox = document.querySelector("input[name=checkbox]");
 
