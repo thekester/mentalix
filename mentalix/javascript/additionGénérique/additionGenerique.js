@@ -692,8 +692,7 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
             document.getElementById("op8").textContent = signe; // On lui dit d'afficher le signe d'opération + dans la zone op
             document.getElementById("nb9").textContent = nb9; // On lui dit d'afficher le nouveau nb2 dans la zone nb2
         break;
-        }
-    break;   
+    }
 };
 
 
