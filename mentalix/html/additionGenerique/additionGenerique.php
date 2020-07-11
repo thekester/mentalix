@@ -122,7 +122,8 @@
 
 
             <h2>Calcul:</h2> <!-- Le titre Calcul plus petit que MATHEMATRIX-->
-            <p id="calcul"> <span id="nb1"></span> <span id="op"></span> <span id="nb2"></span></p> <!-- La zone où on balance le nombre 1 le signe et le nombre 2 -->
+            <p id="calcul"> <span id="nb1"></span>      <span id="op"></span>     <span id="nb2"> </span>   <span id="op2"></span>    <span id="nb3"></span>             <span id="op3"></span> <span id="nb4"></span>  <span id="op4"></span>
+            <span id="nb5"></span> <span id="op5"></span> <span id="nb6"></span> <span id="op6"> </span> <span id="nb7"></span> <span id="op7"></span> <span id="nb8"></span> <span id="op8"></span> <span id="nb9"></span></p> <!-- La zone où on balance le nombre 1 le signe et le nombre 2 -->
 
             <h3>Réponse:</h3>
             <!--La partie écrite réponse -->
