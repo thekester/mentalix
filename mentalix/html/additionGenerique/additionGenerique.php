@@ -152,6 +152,16 @@
     </section> <!-- Fin du code de la partie du site excepté la bordure, ce qu'il y a en haut et en bas -->
 
     <?php
+        $entier=$_POST['entierNAME'];
+        $decimale=$_POST['decimaleNAME'];
+        if(isset($_POST['entierNAME']))
+        {
+            $decimale="undefined";
+        }
+        else
+        {
+            $entier="undefined";
+        }
         $NOMBRE=$_POST['nb'];
         $MINIMUM=$_POST['number1'];
         $MAXIMUM=$_POST['number2'];
@@ -214,7 +224,8 @@
 
         }
     ?>
-
+    <p class="none" id="entierOPTBYPHP"> <?=$entier?> </p>
+    <p class="none" id="decimaleOPTBYPHP"> <?=$decimale?> </p>
     <p class="none" id="nombre"> <?=$NOMBRE?> </p>
     <p class="none" id="minimumIntervalle"><?=$MINIMUM?></p>
     <p class="none" id="maximumIntervalle"><?=$MAXIMUM?></p>

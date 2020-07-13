@@ -31,6 +31,20 @@
 
         </div>
 
+        <div id="divOptNb">
+            <div id="divOPtNbEntier">
+                <input type="checkbox" id="entierID" name="entierNAME" checked>
+                <label for="entier">Entier</label>
+            
+            </div>
+
+            <div id="divOPtNbDecimale">
+                <input type="checkbox" id="decimaleID" name="decimaleNAME">
+                <label for="decimale">Décimale</label>
+            </div>
+        </div>
+
+
         <div id="div2">
             <label for="op-select">Quel opération?</label>
 

@@ -19,13 +19,22 @@ var nb6;
 var nb7;
 var nb8;
 var nb9;
-
+var decimalPlaces = 2;
 
 
 
 
 var scoreCalcul;
 var signe;
+
+var entier = document.getElementById('entierOPTBYPHP').textContent;
+var decimale = document.getElementById('decimaleOPTBYPHP').textContent;
+
+console.log("entier"+entier); //vaut on si coché précedemment et undefined sinon
+console.log("decimale"+decimale);
+
+
+
 var minimumIntervalle = Number(document.getElementById('minimumIntervalle').textContent);
 var maximumIntervalle = Number(document.getElementById('maximumIntervalle').textContent);
 var combienDeNombres = Number(document.getElementById('nombre').textContent);
@@ -95,6 +104,12 @@ nombre.addEventListener("click", function () {
     nb7 = Number(document.getElementById("nb7").textContent); // On lui dit d'afficher nb7 dans la zone nb7
     nb8 = Number(document.getElementById("nb8").textContent); // On lui dit d'afficher nb8 dans la zone nb8
     nb9 = Number(document.getElementById("nb9").textContent); // On lui dit d'afficher nb9 dans la zone nb9
+
+
+
+
+
+
     switch(op){
         case"addition":
             switch(combienDeNombres){
@@ -418,6 +433,14 @@ function entierAleatoire(min, max)
 }
 
 
+function genRand(min, max, decimalPlaces) {  
+    "use strict";
+    var Rand = Math.random()*(max-min) + min;
+    var power = Math.pow(10, decimalPlaces);
+    return Math.floor(Rand*power) / power;
+}
+
+
 function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction calcul suivant
     "use strict";
     console.log("calculSuivant : "+minimumIntervalle+" "+ maximumIntervalle);
@@ -436,14 +459,29 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
     switch(combienDeNombres)
     {
         case 2:
-            nb2 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+            if(entier.localeCompare("undefined")==0){
+                nb2 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+            }
+            else{
+                nb2 = Number(genRand(minimumIntervalle,maximumIntervalle,2));
+            }
             //https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/localeCompare
              if((soustractionPositive.localeCompare("undefined") ) == 0)
             {
-                 nb1 = Number(entierAleatoire(minimumIntervalle, nb2));
+                if(entier.localeCompare("undefined")==0){
+                    nb1 = Number(entierAleatoire(minimumIntervalle, nb2));
+                }
+                else{
+                    nb1 = Number(genRand(minimumIntervalle,nb2,2))
+                }
             }
             else{
-                nb1 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                if(entier.localeCompare("undefined")==0){
+                    nb1 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb1 = Number(genRand(minimumIntervalle,maximumIntervalle,2))
+                }
             }
 
             document.getElementById("nb1").textContent = nb1; // On lui dit d'afficher le nouveau nb1 dans la zone nb1
@@ -452,17 +490,42 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
 
         break;
         case 3 :
+            if(entier.localeCompare("undefined")==0){
+                nb3 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+            }
+            else{
+                nb3 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+            }
 
-            nb3 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
             //https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/localeCompare
              if((soustractionPositive.localeCompare("undefined") ) == 0)
             {
-                nb2 = Number(entierAleatoire(minimumIntervalle, nb3));
-                nb1 = Number(entierAleatoire(minimumIntervalle, nb2));
+                if(entier.localeCompare("undefined")==0){
+                    nb2 = Number(entierAleatoire(minimumIntervalle, nb3));
+                }
+                else{
+                    nb2 = Number(genRand(minimumIntervalle, nb3,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb1 = Number(entierAleatoire(minimumIntervalle, nb2));
+                }
+                else{
+                    nb1 = Number(genRand(minimumIntervalle, nb2 , 2));
+                }
             }
             else{
-                nb1 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-                nb2 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                if(entier.localeCompare("undefined")==0){
+                    nb1 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb2=Number(genRand(minimumIntervalle,maximumIntervalle,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb2 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb2 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
             }
 
             document.getElementById("nb1").textContent = nb1; // On lui dit d'afficher le nouveau nb1 dans la zone nb1
@@ -474,20 +537,53 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
         break;
         case 4:
 
-
-            nb4 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+            if(entier.localeCompare("undefined")==0){
+                nb4 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+            }
+            else{
+                nb4 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+            }
             //https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/localeCompare
              if((soustractionPositive.localeCompare("undefined") ) == 0)
             {
-                nb3 = Number(entierAleatoire(minimumIntervalle, nb4));
-                nb2 = Number(entierAleatoire(minimumIntervalle, nb3));
-                nb1 = Number(entierAleatoire(minimumIntervalle, nb2));
+                if(entier.localeCompare("undefined")==0){
+                    nb3 = Number(entierAleatoire(minimumIntervalle, nb4));
+                }
+                else{
+                    nb3 = Number(genRand(minimumIntervalle, nb4,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb2 = Number(entierAleatoire(minimumIntervalle, nb3));
+                }
+                else{
+                    nb2 = Number(genRand(minimumIntervalle, nb3,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb1 = Number(entierAleatoire(minimumIntervalle, nb2));
+                }
+                else{
+                    nb1 = Number(genRand(minimumIntervalle, nb2,2));
+                }
             }
             else{
-                nb1 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-                nb2 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-                nb3 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-
+                if(entier.localeCompare("undefined")==0){
+                    nb1 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb1 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb2 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb2 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb3 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb3 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
             }
 
             document.getElementById("nb1").textContent = nb1; // On lui dit d'afficher le nouveau nb1 dans la zone nb1
@@ -500,23 +596,65 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
 
         break;
         case 5:
-
-
-            nb5 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+            if(entier.localeCompare("undefined")==0){
+                nb5 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+            }
+            else{
+                nb5 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+            }
             //https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/localeCompare
              if((soustractionPositive.localeCompare("undefined") ) == 0)
             {
-                nb4 = Number(entierAleatoire(minimumIntervalle, nb5));
-                nb3 = Number(entierAleatoire(minimumIntervalle, nb4));
-                nb2 = Number(entierAleatoire(minimumIntervalle, nb3));
-                nb1 = Number(entierAleatoire(minimumIntervalle, nb2));
+                if(entier.localeCompare("undefined")==0){
+                    nb4 = Number(entierAleatoire(minimumIntervalle, nb5));
+                }
+                else{
+                    nb4 = Number(genRand(minimumIntervalle, nb5,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb3 = Number(entierAleatoire(minimumIntervalle, nb4));
+                }
+                else{
+                    nb3 = Number(genRand(minimumIntervalle, nb4,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb2 = Number(entierAleatoire(minimumIntervalle, nb3));
+                }
+                else{
+                    nb2 = Number(genRand(minimumIntervalle, nb3,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb1 = Number(entierAleatoire(minimumIntervalle, nb2));
+                }
+                else{
+                    nb1 = Number(genRand(minimumIntervalle, nb2,2));
+                }
             }
             else{
-                nb1 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-                nb2 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-                nb3 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-                nb4 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-
+                if(entier.localeCompare("undefined")==0){
+                    nb1 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb1 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb2 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb2 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb3 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb3 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb4 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb4 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
             }
 
             document.getElementById("nb1").textContent = nb1; // On lui dit d'afficher le nouveau nb1 dans la zone nb1
@@ -531,24 +669,79 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
 
         break;
         case 6:
-
-            nb6 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+            if(entier.localeCompare("undefined")==0){
+                nb6 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+            }
+            else{
+                nb6 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+            }
             //https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/localeCompare
              if((soustractionPositive.localeCompare("undefined") ) == 0)
             {
-                nb5 = Number(entierAleatoire(minimumIntervalle, nb6));
-                nb4 = Number(entierAleatoire(minimumIntervalle, nb5));
-                nb3 = Number(entierAleatoire(minimumIntervalle, nb4));
-                nb2 = Number(entierAleatoire(minimumIntervalle, nb3));
-                nb1 = Number(entierAleatoire(minimumIntervalle, nb2));
+                if(entier.localeCompare("undefined")==0){
+                    nb5 = Number(entierAleatoire(minimumIntervalle, nb6));
+                }
+                else{
+                    nb5 = Number(genRand(minimumIntervalle, nb6,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb4 = Number(entierAleatoire(minimumIntervalle, nb5));
+                }
+                else{
+                    nb4 = Number(genRand(minimumIntervalle, nb5,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb3 = Number(entierAleatoire(minimumIntervalle, nb4));
+                }
+                else{
+                    nb3 = Number(genRand(minimumIntervalle, nb4,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb2 = Number(entierAleatoire(minimumIntervalle, nb3));
+                }
+                else{
+                    nb2 = Number(genRand(minimumIntervalle, nb3,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb1 = Number(entierAleatoire(minimumIntervalle, nb2));
+
+                }
+                else{
+                    nb1 = Number(genRand(minimumIntervalle, nb2,2));
+                }
+
             }
             else{
-                nb1 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-                nb2 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-                nb3 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-                nb4 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-                nb5 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-
+                if(entier.localeCompare("undefined")==0){
+                    nb1 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb1 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb2 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb2 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb3 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb3 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb4 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb4 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb5 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb5 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
             }
 
             document.getElementById("nb1").textContent = nb1; // On lui dit d'afficher le nouveau nb1 dans la zone nb1
@@ -565,26 +758,89 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
 
         break;
         case 7:
-            nb7 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+            if(entier.localeCompare("undefined")==0){
+                nb7 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+            }
+            else{
+                nb7 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+            }
             //https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/localeCompare
              if((soustractionPositive.localeCompare("undefined") ) == 0)
             {
-                nb6 = Number(entierAleatoire(minimumIntervalle, nb7));
-                nb5 = Number(entierAleatoire(minimumIntervalle, nb6));
-                nb4 = Number(entierAleatoire(minimumIntervalle, nb5));
-                nb3 = Number(entierAleatoire(minimumIntervalle, nb4));
-                nb2 = Number(entierAleatoire(minimumIntervalle, nb3));
-                nb1 = Number(entierAleatoire(minimumIntervalle, nb2));
+                if(entier.localeCompare("undefined")==0){
+                    nb6 = Number(entierAleatoire(minimumIntervalle, nb7));
+                }
+                else{
+                    nb6 = Number(genRand(minimumIntervalle, nb7 , 2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb5 = Number(entierAleatoire(minimumIntervalle, nb6));
+                }
+                else{
+                    nb5 = Number(genRand(minimumIntervalle, nb6 , 2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb4 = Number(entierAleatoire(minimumIntervalle, nb5));
+                }
+                else{
+                    nb4 = Number(genRand(minimumIntervalle, nb5,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb3 = Number(entierAleatoire(minimumIntervalle, nb4));
+                }
+                else{
+                    nb3 = Number(genRand(minimumIntervalle, nb4,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb2 = Number(entierAleatoire(minimumIntervalle, nb3));
+                }
+                else{
+                    nb2 = Number(genRand(minimumIntervalle, nb3,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb1 = Number(entierAleatoire(minimumIntervalle, nb2));
+                }
+                else{
+                    nb1 = Number(genRand(minimumIntervalle, nb2,2));
+                }
             }
             else{
-                nb1 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-                nb2 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-                nb3 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-                nb4 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-                nb5 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-                nb6 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-
-
+                if(entier.localeCompare("undefined")==0){
+                    nb1 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb1 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb2 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb2 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb3 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb3 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb4 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb4 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb5 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb5 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb6 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb6 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
             }
 
             document.getElementById("nb1").textContent = nb1; // On lui dit d'afficher le nouveau nb1 dans la zone nb1
@@ -604,29 +860,104 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
 
         break;
         case 8:
-            nb8 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+            if(entier.localeCompare("undefined")==0){
+                nb8 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+            }
+            else{
+                nb8 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+            }
             //https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/localeCompare
              if((soustractionPositive.localeCompare("undefined") ) == 0)
             {
-                nb7 = Number(entierAleatoire(minimumIntervalle, nb8));
-                nb6 = Number(entierAleatoire(minimumIntervalle, nb7));
-                nb5 = Number(entierAleatoire(minimumIntervalle, nb6));
-                nb4 = Number(entierAleatoire(minimumIntervalle, nb5));
-                nb3 = Number(entierAleatoire(minimumIntervalle, nb4));
-                nb2 = Number(entierAleatoire(minimumIntervalle, nb3));
-                nb1 = Number(entierAleatoire(minimumIntervalle, nb2));
+                if(entier.localeCompare("undefined")==0){
+                    nb7 = Number(entierAleatoire(minimumIntervalle, nb8));
+
+                }
+                else{
+                    nb7 = Number(genRand(minimumIntervalle, nb8,2));
+
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb6 = Number(entierAleatoire(minimumIntervalle, nb7));
+                }
+                else{
+                    nb6 = Number(genRand(minimumIntervalle, nb7,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb5 = Number(entierAleatoire(minimumIntervalle, nb6));
+                }
+                else{
+                    nb5 = Number(genRand(minimumIntervalle, nb6,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb4 = Number(entierAleatoire(minimumIntervalle, nb5));
+                }
+                else{
+                    nb4 = Number(genRand(minimumIntervalle, nb5,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb3 = Number(entierAleatoire(minimumIntervalle, nb4));
+                }
+                else{
+                    nb3 = Number(genRand(minimumIntervalle, nb4, 2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb2 = Number(entierAleatoire(minimumIntervalle, nb3));
+                }
+                else{
+                    nb2 = Number(genRand(minimumIntervalle, nb3,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb1 = Number(entierAleatoire(minimumIntervalle, nb2));
+                }
+                else{
+                    nb1 = Number(genRand(minimumIntervalle, nb2,2));
+                }
             }
             else{
-                nb1 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-                nb2 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-                nb3 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-                nb4 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-                nb5 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-                nb6 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-                nb7 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                if(entier.localeCompare("undefined")==0){
+                    nb1 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb1 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb2 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb2 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb3 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb3 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb4 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb4 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb5 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb5 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb6 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb6 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb7 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb7 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
 
-
-
+                }
             }
 
             document.getElementById("nb1").textContent = nb1; // On lui dit d'afficher le nouveau nb1 dans la zone nb1
@@ -646,32 +977,115 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
             document.getElementById("nb8").textContent = nb8; // On lui dit d'afficher le nouveau nb2 dans la zone nb2
         break;
         case 9:
-            nb9 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+            if(entier.localeCompare("undefined")==0){
+                nb9 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+            }
+            else{
+                nb9 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+            }
             //https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/localeCompare
              if((soustractionPositive.localeCompare("undefined") ) == 0)
             {
-                nb8 = Number(entierAleatoire(minimumIntervalle, nb9));
-                nb7 = Number(entierAleatoire(minimumIntervalle, nb8));
-                nb6 = Number(entierAleatoire(minimumIntervalle, nb7));
-                nb5 = Number(entierAleatoire(minimumIntervalle, nb6));
-                nb4 = Number(entierAleatoire(minimumIntervalle, nb5));
-                nb3 = Number(entierAleatoire(minimumIntervalle, nb4));
-                nb2 = Number(entierAleatoire(minimumIntervalle, nb3));
-                nb1 = Number(entierAleatoire(minimumIntervalle, nb2));
+                if(entier.localeCompare("undefined")==0){
+                    nb8 = Number(entierAleatoire(minimumIntervalle, nb9));
+                }
+                else{
+                    nb8 = Number(genRand(minimumIntervalle, nb9,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb7 = Number(entierAleatoire(minimumIntervalle, nb8));
+                }
+                else{
+                    nb7 = Number(genRand(minimumIntervalle, nb8,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb6 = Number(entierAleatoire(minimumIntervalle, nb7));
+                }
+                else{
+                    nb6 = Number(genRand(minimumIntervalle, nb7,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb5 = Number(entierAleatoire(minimumIntervalle, nb6));
+                }
+                else{
+                    nb5 = Number(genRand(minimumIntervalle, nb6,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb4 = Number(entierAleatoire(minimumIntervalle, nb5));
+                }
+                else{
+                    nb4 = Number(genRand(minimumIntervalle, nb5,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb3 = Number(entierAleatoire(minimumIntervalle, nb4));
+                }
+                else{
+                    nb3 = Number(genRand(minimumIntervalle, nb4,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb2 = Number(entierAleatoire(minimumIntervalle, nb3));
+                }
+                else{
+                    nb2 = Number(genRand(minimumIntervalle, nb3,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb1 = Number(entierAleatoire(minimumIntervalle, nb2));
+                }
+                else{
+                    nb1 = Number(genRand(minimumIntervalle, nb2,2));
+                }
             }
             else{
-                nb1 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-                nb2 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-                nb3 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-                nb4 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-                nb5 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-                nb6 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-                nb7 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
-                nb8 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                if(entier.localeCompare("undefined")==0){
+                    nb1 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb1 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb2 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb2 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb3 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb3 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb4 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb4 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb5 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb5 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb6 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb6 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb7 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb7 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
+                if(entier.localeCompare("undefined")==0){
+                    nb8 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
+                else{
+                    nb8 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
+                }
 
-
-
-
+                
             }
 
             document.getElementById("nb1").textContent = nb1; // On lui dit d'afficher le nouveau nb1 dans la zone nb1
