@@ -32,16 +32,18 @@
         </div>
 
         <div id="divOptNb">
+
+
             <div id="divOPtNbEntier">
-                <input type="checkbox" id="entierID" name="entierNAME" checked>
-                <label for="entier">Entier</label>
-            
+                <input type="radio" id="entierID" name="entierOuDecimale" value="Entier" checked >
+                <label for="entierID">Entier</label>
             </div>
 
             <div id="divOPtNbDecimale">
-                <input type="checkbox" id="decimaleID" name="decimaleNAME">
-                <label for="decimale">Décimale</label>
+                <input type="radio" id="decimaleID" name="entierOuDecimale" value="Decimale">
+                <label for="decimaleID">Décimale</label>
             </div>
+
         </div>
 
 
@@ -60,22 +62,22 @@
 
         <div id="divOptSoustractionIDDIV">
             <div id="divPositiveIDDIV">
-                <input type="checkbox" id="soustractionPositiveID" name="soustractionPositiveHTMLNAME" checked>
+                <input type="radio" id="soustractionPositiveID" name="soustractionHTMLNAME" checked>
                 <label for="positive">Positive</label>
             </div>
             <div id="divNegativeIDDIV">
-                <input type="checkbox" id="soustractionNegativeID" name="soustractionNegativeHTMLNAME">
+                <input type="radio" id="soustractionNegativeID" name="soustractionHTMLNAME">
                 <label for="negative">Négative</label>
             </div>
         </div>
 
         <div id="divOptDivisonIDDIV">
             <div id="divEuclidienneIDDIV">
-                <input type="checkbox" id="divisionEuclidienneID" name="divisionEuclidienneHTMLNAME" checked>
+                <input type="radio" id="divisionEuclidienneID" name="divisionHTMLNAME" checked>
                 <label for="euclidienne">Division Euclidienne</label>
             </div>
             <div id="divDecimaleIDDIV">
-                <input type="checkbox" id="divisionDecimaleID" name="divisionDecimaleHTMLNAME">
+                <input type="radio" id="divisionDecimaleID" name="divisionHTMLNAME">
                 <label for="decimale">Division Décimale</label>
 </div>
         </div>

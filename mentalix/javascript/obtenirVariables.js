@@ -18,6 +18,9 @@ var op  = opListe.selectedIndex;
 
 console.log("op :"+op);
 
+var caseEntier = document.getElementById("divOPtNbEntier");
+var caseDecimale =  document.getElementById("divOPtNbDecimale");
+
 
 var divPositive = document.getElementById("divPositiveIDDIV");
 var divNegative = document.getElementById("divNegativeIDDIV");

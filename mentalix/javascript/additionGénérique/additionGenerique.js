@@ -1109,11 +1109,6 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
     }
 };
 
-
-    
-
-
-
 calculSuivant(minimumIntervalle, maximumIntervalle); //On appelle la fonction calcul suivant
 
 var boutonAntitriche = document.getElementById("check"); //On définit la variable bouton Antitriche qui ne s'active que quand le bouton check a été cliqué
@@ -1359,7 +1354,6 @@ function entreeToCheck() {
                             document.getElementById('invisible').style.display = 'block'; //Alors on le fait apparaître
                         } else { //Sinon
                         }
-
 
                     break;
                     case 6:
