@@ -44,6 +44,11 @@
                 <label for="decimaleID">Décimale</label>
             </div>
 
+            <div class="none" id="precisionDecimale">
+            <label for="prec-select">Chiffres après la virgule</label>
+            <input id = "nb1" min=1 type="number" name="prec1" size=2 placeholder="1">
+            </div>
+
         </div>
 
 
@@ -62,32 +67,32 @@
 
         <div id="divOptSoustractionIDDIV">
             <div id="divPositiveIDDIV">
-                <input type="radio" id="soustractionPositiveID" name="soustractionHTMLNAME" checked>
+                <input type="radio" value="positive" id="soustractionPositiveID" name="soustractionPositieOuNegative" checked>
                 <label for="positive">Positive</label>
             </div>
             <div id="divNegativeIDDIV">
-                <input type="radio" id="soustractionNegativeID" name="soustractionHTMLNAME">
+                <input type="radio" value="negative" id="soustractionNegativeID" name="soustractionPositieOuNegative">
                 <label for="negative">Négative</label>
             </div>
         </div>
 
         <div id="divOptDivisonIDDIV">
             <div id="divEuclidienneIDDIV">
-                <input type="radio" id="divisionEuclidienneID" name="divisionHTMLNAME" checked>
+                <input type="radio" value="euclidienne" id="divisionEuclidienneID" name="divisionEuclidienneOuDecimale" checked>
                 <label for="euclidienne">Division Euclidienne</label>
             </div>
             <div id="divDecimaleIDDIV">
-                <input type="radio" id="divisionDecimaleID" name="divisionHTMLNAME">
+                <input type="radio" value="decimale" id="divisionDecimaleID" name="divisionEuclidienneOuDecimale">
                 <label for="decimale">Division Décimale</label>
-</div>
+            </div>
         </div>
 
         <div id="div3">
             <label for="nb1-select">Les nombres vont de </label>
-            minimum:<input id = "nb1" min=0 type="number" name="number1" size=2 placeholder="0">:
+            minimum:<input id="nb1" min=0 type="number" name="number1" size=2 placeholder="0">:
 
             <label for="nb2-select">à </label>
-            maximum:<input id = "nb2" min=1 type="number" name="number2" size=2 placeholder="10">
+            maximum:<input id="nb2" min=1 type="number" name="number2" size=2 placeholder="10">
 
         </div>
 

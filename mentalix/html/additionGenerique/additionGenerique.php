@@ -12,6 +12,11 @@
 </head> <!-- Fin du code de l'en tête -->
 
 <body>
+    <?php
+        var_dump($_POST);
+        ?>
+
+
     <!-- Le corps du site -->
     <section>
         <!-- Début du code de la partie du site excepté la bordure, ce qu'il y a en haut et en bas -->
@@ -152,15 +157,21 @@
     </section> <!-- Fin du code de la partie du site excepté la bordure, ce qu'il y a en haut et en bas -->
 
     <?php
-        $entier=$_POST['entierNAME'];
-        $decimale=$_POST['decimaleNAME'];
-        if(isset($_POST['entierNAME']))
-        {
+
+        var_dump($_POST['entierOuDecimale']);
+
+        
+        if(strcmp($_POST['entierOuDecimale'],"Entier")==0){
+            $entier=$_POST['entierOuDecimale'];
             $decimale="undefined";
         }
-        else
-        {
+        else if (strcmp($_POST['entierOuDecimale'],"Decimale")==0){
+            $decimale=$_POST['entierOuDecimale'];
             $entier="undefined";
+        }
+        else{
+            $entier=$_POST['entierOuDecimale'];
+            $decimale="undefined";
         }
         $NOMBRE=$_POST['nb'];
         $MINIMUM=$_POST['number1'];
@@ -174,26 +185,27 @@
                 $divisionDecimalePHP="undefined";
             break;
 
-
+        
             case "soustraction":
-                if(isset($_POST['soustractionPositiveHTMLNAME']))
-                {
-                    $soustractionPositivePHP=$_POST['soustractionPositiveHTMLNAME'];
+
+
+                if($_POST['soustractionPositiveOuNegativePHP'] == "positive"){
+                    $soustractionPositivePHP=$_POST['soustractionPositieOuNegative'];
                     $soustractionNegativePHP="undefined";
                     $divisionEuclidiennePHP="undefined";
                     $divisionDecimalePHP="undefined";
-                    /*?>
-                    <p class="none" id="soustractionPositiveOBTBYPHP"><?=$soustractionPositivePHP?></p>
-                    <?*/
                 }
-                else{
+                else if($_POST['soustractionPositiveOuNegativePHP'] == "negative"){
                     $soustractionPositivePHP="undefined";
-                    $soustractionNegativePHP=$_POST['soustractionNegativeHTMLNAME'];
+                    $soustractionNegativePHP=$_POST['soustractionPositieOuNegative'];
                     $divisionEuclidiennePHP="undefined";
                     $divisionDecimalePHP="undefined";
-                    /*?>
-                     <p class="none" id="soustractionNegativeOBTBYPHP"><?=$soustractionNegativePHP?></p>
-                    <?*/
+                }
+                else{
+                    $soustractionPositivePHP=$_POST['soustractionPositieOuNegative'];
+                    $soustractionNegativePHP="undefined";
+                    $divisionEuclidiennePHP="undefined";
+                    $divisionDecimalePHP="undefined";
                 }
             break;
 
@@ -201,24 +213,25 @@
             break;
 
             case "division":
-                if(isset($_POST['divisionEuclidienneHTMLNAME']))
-                {
+                if($_POST['soustractionPositiveOuNegativePHP'] == "euclidienne"){
                     $soustractionPositivePHP="undefined";
                     $soustractionNegativePHP="undefined";
-                    $divisionEuclidiennePHP=$_POST['divisionEuclidienneHTMLNAME'];
+                    $divisionEuclidiennePHP=$_POST['divisionEuclidienneOuDecimale'];
                     $divisionDecimalePHP="undefined";
-                    /*?>
-                    <p class="none" id="divisionEuclidienneOBTBYPHP"><?=$divisionEuclidiennePHP?></p>
-                    <?*/
+
                 }
-                else{
+                else if ($_POST['soustractionPositiveOuNegativePHP'] == "decimale"){
                     $soustractionPositivePHP="undefined";
                     $soustractionNegativePHP="undefined";
                     $divisionEuclidiennePHP="undefined";
-                    $divisionDecimalePHP=$_POST['divisionDecimaleHTMLNAME'];
-                    /*?>
-                    <p class="none" id="divisionDecimaleOBTBYPHP"><?=$divisionDecimalePHP?></p>
-                    <?*/
+                    $divisionDecimalePHP=$_POST['divisionEuclidienneOuDecimale'];
+                }
+
+                else{
+                    $soustractionPositivePHP="undefined";
+                    $soustractionNegativePHP="undefined";
+                    $divisionEuclidiennePHP=$_POST['divisionEuclidienneOuDecimale'];
+                    $divisionDecimalePHP="undefined";
                 }
             break;
 

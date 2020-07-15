@@ -21,6 +21,19 @@ console.log("op :"+op);
 var caseEntier = document.getElementById("divOPtNbEntier");
 var caseDecimale =  document.getElementById("divOPtNbDecimale");
 
+/*
+var precison = document.getElementById("precisionDecimale");
+
+
+caseDecimale.addEventListener("onchange", function () {
+    if (caseDecimale.checked){
+        precison.style.display="block";
+    }
+    else{
+        precison.style.display="none";
+    }
+});
+*/
 
 var divPositive = document.getElementById("divPositiveIDDIV");
 var divNegative = document.getElementById("divNegativeIDDIV");
@@ -135,7 +148,7 @@ go.addEventListener("click", function () {
 
     }
     
-    else if (nb1 === 0){
+    else if (nb1 == ""){
         message1.style.display = 'none';
         message2.style.display = 'none';
         message3.style.display ='none';
@@ -145,7 +158,7 @@ go.addEventListener("click", function () {
 
     }
     
-    else if (nb2 === 0){
+    else if (nb2 == "0" || nb2 == ""){
         message1.style.display = 'none';
         message2.style.display = 'none';
         message3.style.display ='none';

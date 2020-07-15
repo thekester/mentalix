@@ -28,6 +28,9 @@ var scoreCalcul;
 var signe;
 
 var entier = document.getElementById('entierOPTBYPHP').textContent;
+console.log("Le texte de entier vaut"+entier);
+
+
 var decimale = document.getElementById('decimaleOPTBYPHP').textContent;
 
 console.log("entier"+entier); //vaut on si coché précedemment et undefined sinon
@@ -38,7 +41,7 @@ console.log("decimale"+decimale);
 var minimumIntervalle = Number(document.getElementById('minimumIntervalle').textContent);
 var maximumIntervalle = Number(document.getElementById('maximumIntervalle').textContent);
 var combienDeNombres = Number(document.getElementById('nombre').textContent);
-console.log("IL faut"+nombre+"pour le calcul");
+console.log("IL faut"+combienDeNombres+"pour le calcul");
 
 
 var op =  document.getElementById('operationCalcul').textContent;
@@ -50,14 +53,7 @@ var op6 = document.getElementById('operationCalcul').textContent;
 var op7 = document.getElementById('operationCalcul').textContent;
 var op8 = document.getElementById('operationCalcul').textContent;
 
-
-
-
-
-
-
-
-var checkbox = document.querySelector("input[name=checkbox]");
+//var checkbox = document.querySelector("input[name=checkbox]");
 
 var soustractionPositive = document.getElementById("divisionDecimaleOBTBYPHP").textContent;
 
@@ -104,12 +100,6 @@ nombre.addEventListener("click", function () {
     nb7 = Number(document.getElementById("nb7").textContent); // On lui dit d'afficher nb7 dans la zone nb7
     nb8 = Number(document.getElementById("nb8").textContent); // On lui dit d'afficher nb8 dans la zone nb8
     nb9 = Number(document.getElementById("nb9").textContent); // On lui dit d'afficher nb9 dans la zone nb9
-
-
-
-
-
-
     switch(op){
         case"addition":
             switch(combienDeNombres){
@@ -118,101 +108,85 @@ nombre.addEventListener("click", function () {
                         document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                         calculScore(); // On appelle la fonction score
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
-                        //calculSuivant();
                     } else { //sinon
                         document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
-                        //calculSuivant();
                     }
                 break;
                 case 3:
-                    if (nb1 + nb2 + nb3 == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
+                    if (nb1 + nb2 + nb3 == Number(document.getElementById("texte").value)) { // Si nb1+nb2+nb3 est bien le bon résultat
                         document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                         calculScore(); // On appelle la fonction score
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
-                        //calculSuivant();
                     } else { //sinon
                         document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
-                        //calculSuivant();
                     }
 
                 break;
                 case 4:
-                    if (nb1 + nb2 + nb3 + nb4 == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
+                    if (nb1 + nb2 + nb3 + nb4 == Number(document.getElementById("texte").value)) { // Si nb1+nb2+nb3+nb4 est bien le bon résultat
                         document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                         calculScore(); // On appelle la fonction score
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
-                        //calculSuivant();
                     } else { //sinon
                         document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
-                        //calculSuivant();
                     }
 
                 break;
                 case 5:
-                    if (nb1 + nb2 + nb3 + nb4 + nb5 == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
+                    if (nb1 + nb2 + nb3 + nb4 + nb5 == Number(document.getElementById("texte").value)) { // Si nb1+nb2+nb3+nb4+nb5 est bien le bon résultat
                         document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                         calculScore(); // On appelle la fonction score
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
-                        //calculSuivant();
                     } else { //sinon
                         document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
-                        //calculSuivant();
                     }
 
                 break;
                 case 6:
-                    if (nb1 + nb2 + nb3 + nb4 + nb5 + nb6 == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
+                    if (nb1 + nb2 + nb3 + nb4 + nb5 + nb6 == Number(document.getElementById("texte").value)) { // Si nb1+nb2+nb3+nb4+nb5+nb6 est bien le bon résultat
                         document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                         calculScore(); // On appelle la fonction score
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
-                        //calculSuivant();
                     } else { //sinon
                         document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
-                        //calculSuivant();
                     }
 
                 break;
                 case 7:
-                    if (nb1 + nb2 + nb3 + nb4 + nb5 + nb6 + nb7 == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
+                    if (nb1 + nb2 + nb3 + nb4 + nb5 + nb6 + nb7 == Number(document.getElementById("texte").value)) { // Si nb1+nb2+nb3+nb4+nb5+nb6+nb7 est bien le bon résultat
                         document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                         calculScore(); // On appelle la fonction score
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
-                        //calculSuivant();
                     } else { //sinon
                         document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
-                        //calculSuivant();
                     }
 
                 break;
                 case 8:
-                    if (nb1 + nb2 + nb3 + nb4 + nb5 + nb6 + nb7 + nb8  == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
+                    if (nb1 + nb2 + nb3 + nb4 + nb5 + nb6 + nb7 + nb8  == Number(document.getElementById("texte").value)) { // Si nb1+nb2+nb3+nb4+nb5+nb6+nb7+nb8 est bien le bon résultat
                         document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                         calculScore(); // On appelle la fonction score
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
-                        //calculSuivant();
                     } else { //sinon
                         document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
-                        //calculSuivant();
                     }
 
                 break;
                 case 9:
-                    if (nb1 + nb2 + nb3 + nb4 + nb5 + nb6 + nb7 + nb8 + nb9 == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
+                    if (nb1 + nb2 + nb3 + nb4 + nb5 + nb6 + nb7 + nb8 + nb9 == Number(document.getElementById("texte").value)) { // Si nb1+nb2+nb3+nb4+nb5+nb6+nb7+nb8+nb9 est bien le bon résultat
                         document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                         calculScore(); // On appelle la fonction score
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
-                        //calculSuivant();
                     } else { //sinon
                         document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
-                        //calculSuivant();
                     }
 
                 break;
@@ -222,7 +196,7 @@ nombre.addEventListener("click", function () {
         case"soustraction":
             switch(combienDeNombres){
                 case 2:
-                    if (nb1 - nb2 == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
+                    if (nb1 - nb2 == Number(document.getElementById("texte").value)) { // Si nb1-nb2 est bien le bon résultat
                         document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                         calculScore(); // On appelle la fonction score
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
@@ -232,7 +206,7 @@ nombre.addEventListener("click", function () {
                     }
                 break;
                 case 3:
-                    if (nb1 - nb2 - nb3 == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
+                    if (nb1 - nb2 - nb3 == Number(document.getElementById("texte").value)) { // Si nb1-nb2-nb3 est bien le bon résultat
                         document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                         calculScore(); // On appelle la fonction score
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
@@ -242,7 +216,7 @@ nombre.addEventListener("click", function () {
                     }
                 break;
                 case 4:
-                    if (nb1 - nb2 - nb3 - nb4 == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
+                    if (nb1 - nb2 - nb3 - nb4 == Number(document.getElementById("texte").value)) { // Si nb1-nb2-nb3-nb4 est bien le bon résultat
                         document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                         calculScore(); // On appelle la fonction score
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
@@ -252,7 +226,7 @@ nombre.addEventListener("click", function () {
                     }
                 break;
                 case 5:
-                    if (nb1 - nb2 - nb3 - nb4 - nb5 == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
+                    if (nb1 - nb2 - nb3 - nb4 - nb5 == Number(document.getElementById("texte").value)) { // Si nb1-nb2-nb3-nb4-nb5 est bien le bon résultat
                         document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                         calculScore(); // On appelle la fonction score
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
@@ -262,7 +236,7 @@ nombre.addEventListener("click", function () {
                     }
                 break;
                 case 6:
-                    if (nb1 - nb2 - nb3 - nb4 - nb5 - nb6 == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
+                    if (nb1 - nb2 - nb3 - nb4 - nb5 - nb6 == Number(document.getElementById("texte").value)) { // Si nb1-nb2-nb3-nb4-nb5-nb6 est bien le bon résultat
                         document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                         calculScore(); // On appelle la fonction score
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
@@ -272,7 +246,7 @@ nombre.addEventListener("click", function () {
                     }
                 break;
                 case 7:
-                    if (nb1 - nb2 - nb3 - nb4 - nb5 - nb6 - nb7  == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
+                    if (nb1 - nb2 - nb3 - nb4 - nb5 - nb6 - nb7  == Number(document.getElementById("texte").value)) { // Si nb1-nb2-nb3-nb4-nb5-nb6-nb7 est bien le bon résultat
                         document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                         calculScore(); // On appelle la fonction score
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
@@ -282,7 +256,7 @@ nombre.addEventListener("click", function () {
                     }
                 break;
                 case 8:
-                    if (nb1 - nb2 - nb3 - nb4 - nb5 - nb6 - nb7 - nb8 == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
+                    if (nb1 - nb2 - nb3 - nb4 - nb5 - nb6 - nb7 - nb8 == Number(document.getElementById("texte").value)) { // Si nb1-nb2-nb3-nb4-nb5-nb6-nb7-nb8 est bien le bon résultat
                         document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                         calculScore(); // On appelle la fonction score
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
@@ -292,7 +266,7 @@ nombre.addEventListener("click", function () {
                     }
                 break;
                 case 9:
-                    if (nb1 - nb2 - nb3 - nb4 - nb5 - nb6 - nb7 - nb8 - nb9 == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
+                    if (nb1 - nb2 - nb3 - nb4 - nb5 - nb6 - nb7 - nb8 - nb9 == Number(document.getElementById("texte").value)) { // Si nb1-nb2-nb3-nb4-nb5-nb6-nb7-nb8-nb9 est bien le bon résultat
                         document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                         calculScore(); // On appelle la fonction score
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
@@ -307,7 +281,7 @@ nombre.addEventListener("click", function () {
         case "multiplication":
             switch(combienDeNombres){
                 case 2:
-                    if (nb1 * nb2 == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
+                    if (nb1 * nb2 == Number(document.getElementById("texte").value)) { // Si nb1*nb2 est bien le bon résultat
                         document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                         calculScore(); // On appelle la fonction score
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
@@ -317,7 +291,7 @@ nombre.addEventListener("click", function () {
                     }
                 break;
                 case 3:
-                    if (nb1 * nb2 * nb3 == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
+                    if (nb1 * nb2 * nb3 == Number(document.getElementById("texte").value)) { // Si nb1*nb2*nb3 est bien le bon résultat
                         document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                         calculScore(); // On appelle la fonction score
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
@@ -328,7 +302,7 @@ nombre.addEventListener("click", function () {
 
                 break;
                 case 4:
-                    if (nb1 * nb2 * nb3 * nb4 == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
+                    if (nb1 * nb2 * nb3 * nb4 == Number(document.getElementById("texte").value)) { // Si nb1*nb2*nb3*nb4 est bien le bon résultat
                         document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                         calculScore(); // On appelle la fonction score
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
@@ -339,7 +313,7 @@ nombre.addEventListener("click", function () {
 
                 break;
                 case 5 :
-                    if (nb1 * nb2 * nb3 * nb4 * nb5 == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
+                    if (nb1 * nb2 * nb3 * nb4 * nb5 == Number(document.getElementById("texte").value)) { // Si nb1*nb2*nb3*nb4*nb5 est bien le bon résultat
                         document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                         calculScore(); // On appelle la fonction score
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
@@ -350,7 +324,7 @@ nombre.addEventListener("click", function () {
 
                 break;
                 case 6 :
-                    if (nb1 * nb2 * nb3 * nb4 * nb5 * nb6 == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
+                    if (nb1 * nb2 * nb3 * nb4 * nb5 * nb6 == Number(document.getElementById("texte").value)) { // Si nb1*nb2*nb3*nb4*nb5*nb6 est bien le bon résultat
                         document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                         calculScore(); // On appelle la fonction score
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
@@ -361,7 +335,7 @@ nombre.addEventListener("click", function () {
 
                 break;
                 case 7:
-                    if (nb1 * nb2 * nb3 * nb4 * nb5 * nb6 * nb7 == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
+                    if (nb1 * nb2 * nb3 * nb4 * nb5 * nb6 * nb7 == Number(document.getElementById("texte").value)) { // Si nb1*nb2*nb3*nb4*nb5*nb6*nb7 est bien le bon résultat
                         document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                         calculScore(); // On appelle la fonction score
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
@@ -372,7 +346,7 @@ nombre.addEventListener("click", function () {
 
                 break;
                 case 8:
-                    if (nb1 * nb2 * nb3 * nb4 * nb5 * nb6 * nb7 * nb8 == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
+                    if (nb1 * nb2 * nb3 * nb4 * nb5 * nb6 * nb7 * nb8 == Number(document.getElementById("texte").value)) { // Si nb1*nb2*nb3*nb4*nb5*nb6*nb7*nb8 est bien le bon résultat
                         document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                         calculScore(); // On appelle la fonction score
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
@@ -383,7 +357,7 @@ nombre.addEventListener("click", function () {
 
                 break;
                 case 9 :
-                    if (nb1 * nb2 * nb3 * nb4 * nb5 * nb6 * nb7 * nb8 * nb9 == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
+                    if (nb1 * nb2 * nb3 * nb4 * nb5 * nb6 * nb7 * nb8 * nb9 == Number(document.getElementById("texte").value)) { // Si nb1*nb2*nb3*nb4*nb5*nb6*nb7*nb8*nb9 est bien le bon résultat
                         document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                         calculScore(); // On appelle la fonction score
                         document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
@@ -398,29 +372,206 @@ nombre.addEventListener("click", function () {
             
         break;
         case"division":
-            if(divisionEuclidienne != "undefined"){
-                if ((nb1 / nb2 |0) == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
-                    document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
-                    calculScore(); // On appelle la fonction score
-                    document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
-                } else { //sinon
-                    document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
-                    document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
-                }
-            }
-            else{
-                if (nb1 / nb2 == Number(document.getElementById("texte").value)) { // Si nb1+nb2 est bien le bon résultat
-                    document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
-                    calculScore(); // On appelle la fonction score
-                    document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
-                } else { //sinon
-                    document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
-                    document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
-                }
-            }
+            switch(combienDeNombres){
+                case 2:
 
+                if(divisionEuclidienne != "undefined"){
+                    if ((nb1 / nb2 |0) == Number(document.getElementById("texte").value)) { // Si nb1/nb2 est bien le bon résultat
+                        document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
+                        calculScore(); // On appelle la fonction score
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    } else { //sinon
+                        document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    }
+                }
+                else{
+                    if (nb1 / nb2 == Number(document.getElementById("texte").value)) { // Si nb1/nb2 est bien le bon résultat
+                        document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
+                        calculScore(); // On appelle la fonction score
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    } else { //sinon
+                        document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    }
+                }
+                break;
+            }
+            switch(combienDeNombres){
+                case 3:
 
-            
+                if(divisionEuclidienne != "undefined"){
+                    if ((nb1 / nb2 / nb3 |0) == Number(document.getElementById("texte").value)) { // Si nb1/nb2/nb3 est bien le bon résultat
+                        document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
+                        calculScore(); // On appelle la fonction score
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    } else { //sinon
+                        document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    }
+                }
+                else{
+                    if (nb1 / nb2/nb3 == Number(document.getElementById("texte").value)) { // Si nb1/nb2/nb3 est bien le bon résultat
+                        document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
+                        calculScore(); // On appelle la fonction score
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    } else { //sinon
+                        document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    }
+                }
+                break;
+            }
+            switch(combienDeNombres){
+                case 4:
+
+                if(divisionEuclidienne != "undefined"){
+                    if ((nb1 / nb2 / nb3 / nb4 |0) == Number(document.getElementById("texte").value)) { // Si nb1/nb2/nb3/nb4 est bien le bon résultat
+                        document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
+                        calculScore(); // On appelle la fonction score
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    } else { //sinon
+                        document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    }
+                }
+                else{
+                    if (nb1 / nb2 / nb2 / nb4  == Number(document.getElementById("texte").value)) { // Si nb1/nb2/nb3/nb4 est bien le bon résultat
+                        document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
+                        calculScore(); // On appelle la fonction score
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    } else { //sinon
+                        document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    }
+                }
+                break;
+            }
+            switch(combienDeNombres){
+                case 5:
+
+                if(divisionEuclidienne != "undefined"){
+                    if ((nb1 / nb2 / nb3 / nb4 / nb5 |0) == Number(document.getElementById("texte").value)) { // Si nb1/nb2/nb3/nb4/nnb5 est bien le bon résultat
+                        document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
+                        calculScore(); // On appelle la fonction score
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    } else { //sinon
+                        document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    }
+                }
+                else{
+                    if (nb1 / nb2 / nb3 / nb4 / nb5 == Number(document.getElementById("texte").value)) { // Si nb1/nb2/nb3/nb4/nb5 est bien le bon résultat
+                        document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
+                        calculScore(); // On appelle la fonction score
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    } else { //sinon
+                        document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    }
+                }
+                break;
+            }
+            switch(combienDeNombres){
+                case 6:
+
+                if(divisionEuclidienne != "undefined"){
+                    if ((nb1 / nb2 / nb3 / nb4 / nb5 / nb6 |0) == Number(document.getElementById("texte").value)) { // Si nb1/nb2/nb3/nb4/nb5/nb6 est bien le bon résultat
+                        document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
+                        calculScore(); // On appelle la fonction score
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    } else { //sinon
+                        document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    }
+                }
+                else{
+                    if (nb1 / nb2 / nb3 / nb4 / nb5 / nb6 == Number(document.getElementById("texte").value)) { // Si nb1/nb2/nb3/nb4/nb5/nb6 est bien le bon résultat
+                        document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
+                        calculScore(); // On appelle la fonction score
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    } else { //sinon
+                        document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    }
+                }
+                break;
+            }
+            switch(combienDeNombres){
+                case 7:
+
+                if(divisionEuclidienne != "undefined"){
+                    if ((nb1 / nb2 /nb3 / nb4 / nb5 / nb6 / nb7 |0) == Number(document.getElementById("texte").value)) { // Si nb1/nb2/nb3/nb4/nb5/nb6/nb7 est bien le bon résultat
+                        document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
+                        calculScore(); // On appelle la fonction score
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    } else { //sinon
+                        document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    }
+                }
+                else{
+                    if (nb1 / nb2 / nb3 / nb4 / nb5 / nb6 / nb7 == Number(document.getElementById("texte").value)) { // Si nb1/nb2/nb3/nb4/nb5/nb6/nb7 est bien le bon résultat
+                        document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
+                        calculScore(); // On appelle la fonction score
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    } else { //sinon
+                        document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    }
+                }
+                break;
+            }
+            switch(combienDeNombres){
+                case 8:
+
+                if(divisionEuclidienne != "undefined"){
+                    if ((nb1 / nb2 / nb3 / nb4 / nb5 / nb6 / nb7 / nb8 |0) == Number(document.getElementById("texte").value)) { // Si nb1/nb2/nb3/nb4/nb5/nb6/nb7/nb8 est bien le bon résultat
+                        document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
+                        calculScore(); // On appelle la fonction score
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    } else { //sinon
+                        document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    }
+                }
+                else{
+                    if (nb1 / nb2 / nb3 / nb4 / nb5 / nb6 / nb7 / nb8 == Number(document.getElementById("texte").value)) { // Si nb1/nb2/nb3/nb4/nb5/nb6/nb7/nb8 est bien le bon résultat
+                        document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
+                        calculScore(); // On appelle la fonction score
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    } else { //sinon
+                        document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    }
+                }
+                break;
+            }
+            switch(combienDeNombres){
+                case 9:
+
+                if(divisionEuclidienne != "undefined"){
+                    if ((nb1 / nb2 / nb3 / nb4 / nb5 / nb6 / nb7 / nb8 / nb9|0) == Number(document.getElementById("texte").value)) { // Si nb1/nb2/nb3/nb4/nb5/nb6/nb7/nb8/nb9 est bien le bon résultat
+                        document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
+                        calculScore(); // On appelle la fonction score
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    } else { //sinon
+                        document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    }
+                }
+                else{
+                    if (nb1 / nb2 / nb3 / nb4 / nb5 / nb6 / nb7 / nb8 / nb9 == Number(document.getElementById("texte").value)) { // Si nb1/nb2/nb3/nb4/nb5/nb6/nb7/nb8/nb9 est bien le bon résultat
+                        document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
+                        calculScore(); // On appelle la fonction score
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    } else { //sinon
+                        document.getElementById("reponse").textContent = "faux"; //On lui affiche faux
+                        document.getElementById('check').style.display = 'none'; //On fait disparaître le bouton check
+                    }
+                }
+                break;
+            }
         break;
     }
 });
@@ -441,9 +592,8 @@ function genRand(min, max, decimalPlaces) {
 }
 
 
-function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction calcul suivant
+function calculSuivant(minimumIntervalle, maximumIntervalle, op, combienDeNombres , entier , soustractionPositive ) { //La fonction calcul suivant
     "use strict";
-    console.log("calculSuivant : "+minimumIntervalle+" "+ maximumIntervalle);
     document.getElementById('invisible').style.display = 'none'; //Le bouton devient invisible quand on clique sur le bouton calcul suivant
     document.getElementById("reponse").innerHTML = "<br />"; // On lui dit de ne plus afficher le vrai ou faux
     document.getElementById("texte").value = ""; //On lui dit de ne pas garder la réponse précédente que l'utilisateur a tapé
@@ -459,16 +609,23 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
     switch(combienDeNombres)
     {
         case 2:
-            if(entier.localeCompare("undefined")==0){
+            if(entier.length==8){ //8 si entier
+
                 nb2 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
             }
-            else{
+            else if (entier.length==11){ //11 undefined
+
                 nb2 = Number(genRand(minimumIntervalle,maximumIntervalle,2));
             }
+            else{
+                nb2 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+
+            }
+            
             //https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/localeCompare
-             if((soustractionPositive.localeCompare("undefined") ) == 0)
+             if(soustractionPositive!="undefined")
             {
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){
                     nb1 = Number(entierAleatoire(minimumIntervalle, nb2));
                 }
                 else{
@@ -476,13 +633,17 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
                 }
             }
             else{
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){
                     nb1 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
-                else{
+                else if (entier.lenght==11){
                     nb1 = Number(genRand(minimumIntervalle,maximumIntervalle,2))
                 }
+                else{
+                    nb1 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
+                }
             }
+            
 
             document.getElementById("nb1").textContent = nb1; // On lui dit d'afficher le nouveau nb1 dans la zone nb1
             document.getElementById("op").textContent = signe; // On lui dit d'afficher le signe d'opération + dans la zone op
@@ -490,7 +651,7 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
 
         break;
         case 3 :
-            if(entier.localeCompare("undefined")==0){
+            if(entier.length==8){ //8 si entier
                 nb3 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
             }
             else{
@@ -500,13 +661,13 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
             //https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/localeCompare
              if((soustractionPositive.localeCompare("undefined") ) == 0)
             {
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb2 = Number(entierAleatoire(minimumIntervalle, nb3));
                 }
                 else{
                     nb2 = Number(genRand(minimumIntervalle, nb3,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb1 = Number(entierAleatoire(minimumIntervalle, nb2));
                 }
                 else{
@@ -514,13 +675,13 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
                 }
             }
             else{
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb1 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
                     nb2=Number(genRand(minimumIntervalle,maximumIntervalle,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb2 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
@@ -537,7 +698,7 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
         break;
         case 4:
 
-            if(entier.localeCompare("undefined")==0){
+            if(entier.length==8){ //8 si entier
                 nb4 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
             }
             else{
@@ -546,19 +707,19 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
             //https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/localeCompare
              if((soustractionPositive.localeCompare("undefined") ) == 0)
             {
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb3 = Number(entierAleatoire(minimumIntervalle, nb4));
                 }
                 else{
                     nb3 = Number(genRand(minimumIntervalle, nb4,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb2 = Number(entierAleatoire(minimumIntervalle, nb3));
                 }
                 else{
                     nb2 = Number(genRand(minimumIntervalle, nb3,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb1 = Number(entierAleatoire(minimumIntervalle, nb2));
                 }
                 else{
@@ -566,19 +727,19 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
                 }
             }
             else{
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb1 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
                     nb1 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb2 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
                     nb2 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb3 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
@@ -596,7 +757,7 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
 
         break;
         case 5:
-            if(entier.localeCompare("undefined")==0){
+            if(entier.length==8){ //8 si entier
                 nb5 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
             }
             else{
@@ -605,25 +766,25 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
             //https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/localeCompare
              if((soustractionPositive.localeCompare("undefined") ) == 0)
             {
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb4 = Number(entierAleatoire(minimumIntervalle, nb5));
                 }
                 else{
                     nb4 = Number(genRand(minimumIntervalle, nb5,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb3 = Number(entierAleatoire(minimumIntervalle, nb4));
                 }
                 else{
                     nb3 = Number(genRand(minimumIntervalle, nb4,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb2 = Number(entierAleatoire(minimumIntervalle, nb3));
                 }
                 else{
                     nb2 = Number(genRand(minimumIntervalle, nb3,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb1 = Number(entierAleatoire(minimumIntervalle, nb2));
                 }
                 else{
@@ -631,25 +792,25 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
                 }
             }
             else{
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb1 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
                     nb1 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb2 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
                     nb2 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb3 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
                     nb3 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb4 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
@@ -669,7 +830,7 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
 
         break;
         case 6:
-            if(entier.localeCompare("undefined")==0){
+            if(entier.length==8){ //8 si entier
                 nb6 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
             }
             else{
@@ -678,33 +839,32 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
             //https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/localeCompare
              if((soustractionPositive.localeCompare("undefined") ) == 0)
             {
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb5 = Number(entierAleatoire(minimumIntervalle, nb6));
                 }
                 else{
                     nb5 = Number(genRand(minimumIntervalle, nb6,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb4 = Number(entierAleatoire(minimumIntervalle, nb5));
                 }
                 else{
                     nb4 = Number(genRand(minimumIntervalle, nb5,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb3 = Number(entierAleatoire(minimumIntervalle, nb4));
                 }
                 else{
                     nb3 = Number(genRand(minimumIntervalle, nb4,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb2 = Number(entierAleatoire(minimumIntervalle, nb3));
                 }
                 else{
                     nb2 = Number(genRand(minimumIntervalle, nb3,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb1 = Number(entierAleatoire(minimumIntervalle, nb2));
-
                 }
                 else{
                     nb1 = Number(genRand(minimumIntervalle, nb2,2));
@@ -712,31 +872,31 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
 
             }
             else{
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb1 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
                     nb1 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb2 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
                     nb2 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb3 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
                     nb3 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb4 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
                     nb4 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb5 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
@@ -758,7 +918,7 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
 
         break;
         case 7:
-            if(entier.localeCompare("undefined")==0){
+            if(entier.length==8){ //8 si entier
                 nb7 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
             }
             else{
@@ -767,37 +927,37 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
             //https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/localeCompare
              if((soustractionPositive.localeCompare("undefined") ) == 0)
             {
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb6 = Number(entierAleatoire(minimumIntervalle, nb7));
                 }
                 else{
                     nb6 = Number(genRand(minimumIntervalle, nb7 , 2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb5 = Number(entierAleatoire(minimumIntervalle, nb6));
                 }
                 else{
                     nb5 = Number(genRand(minimumIntervalle, nb6 , 2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb4 = Number(entierAleatoire(minimumIntervalle, nb5));
                 }
                 else{
                     nb4 = Number(genRand(minimumIntervalle, nb5,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb3 = Number(entierAleatoire(minimumIntervalle, nb4));
                 }
                 else{
                     nb3 = Number(genRand(minimumIntervalle, nb4,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb2 = Number(entierAleatoire(minimumIntervalle, nb3));
                 }
                 else{
                     nb2 = Number(genRand(minimumIntervalle, nb3,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb1 = Number(entierAleatoire(minimumIntervalle, nb2));
                 }
                 else{
@@ -805,37 +965,37 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
                 }
             }
             else{
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb1 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
                     nb1 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb2 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
                     nb2 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb3 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
                     nb3 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb4 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
                     nb4 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb5 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
                     nb5 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb6 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
@@ -860,7 +1020,7 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
 
         break;
         case 8:
-            if(entier.localeCompare("undefined")==0){
+            if(entier.length==8){ //8 si entier
                 nb8 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
             }
             else{
@@ -869,7 +1029,7 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
             //https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/localeCompare
              if((soustractionPositive.localeCompare("undefined") ) == 0)
             {
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb7 = Number(entierAleatoire(minimumIntervalle, nb8));
 
                 }
@@ -877,37 +1037,37 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
                     nb7 = Number(genRand(minimumIntervalle, nb8,2));
 
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb6 = Number(entierAleatoire(minimumIntervalle, nb7));
                 }
                 else{
                     nb6 = Number(genRand(minimumIntervalle, nb7,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb5 = Number(entierAleatoire(minimumIntervalle, nb6));
                 }
                 else{
                     nb5 = Number(genRand(minimumIntervalle, nb6,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb4 = Number(entierAleatoire(minimumIntervalle, nb5));
                 }
                 else{
                     nb4 = Number(genRand(minimumIntervalle, nb5,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb3 = Number(entierAleatoire(minimumIntervalle, nb4));
                 }
                 else{
                     nb3 = Number(genRand(minimumIntervalle, nb4, 2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb2 = Number(entierAleatoire(minimumIntervalle, nb3));
                 }
                 else{
                     nb2 = Number(genRand(minimumIntervalle, nb3,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb1 = Number(entierAleatoire(minimumIntervalle, nb2));
                 }
                 else{
@@ -915,43 +1075,43 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
                 }
             }
             else{
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb1 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
                     nb1 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb2 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
                     nb2 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb3 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
                     nb3 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb4 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
                     nb4 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb5 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
                     nb5 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb6 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
                     nb6 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb7 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
@@ -977,7 +1137,7 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
             document.getElementById("nb8").textContent = nb8; // On lui dit d'afficher le nouveau nb2 dans la zone nb2
         break;
         case 9:
-            if(entier.localeCompare("undefined")==0){
+            if(entier.length==8){ //8 si entier
                 nb9 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
             }
             else{
@@ -986,49 +1146,49 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
             //https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/localeCompare
              if((soustractionPositive.localeCompare("undefined") ) == 0)
             {
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb8 = Number(entierAleatoire(minimumIntervalle, nb9));
                 }
                 else{
                     nb8 = Number(genRand(minimumIntervalle, nb9,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb7 = Number(entierAleatoire(minimumIntervalle, nb8));
                 }
                 else{
                     nb7 = Number(genRand(minimumIntervalle, nb8,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb6 = Number(entierAleatoire(minimumIntervalle, nb7));
                 }
                 else{
                     nb6 = Number(genRand(minimumIntervalle, nb7,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb5 = Number(entierAleatoire(minimumIntervalle, nb6));
                 }
                 else{
                     nb5 = Number(genRand(minimumIntervalle, nb6,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb4 = Number(entierAleatoire(minimumIntervalle, nb5));
                 }
                 else{
                     nb4 = Number(genRand(minimumIntervalle, nb5,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb3 = Number(entierAleatoire(minimumIntervalle, nb4));
                 }
                 else{
                     nb3 = Number(genRand(minimumIntervalle, nb4,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb2 = Number(entierAleatoire(minimumIntervalle, nb3));
                 }
                 else{
                     nb2 = Number(genRand(minimumIntervalle, nb3,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb1 = Number(entierAleatoire(minimumIntervalle, nb2));
                 }
                 else{
@@ -1036,49 +1196,49 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
                 }
             }
             else{
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb1 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
                     nb1 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb2 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
                     nb2 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb3 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
                     nb3 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb4 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
                     nb4 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb5 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
                     nb5 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb6 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
                     nb6 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb7 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
                     nb7 = Number(genRand(minimumIntervalle, maximumIntervalle,2));
                 }
-                if(entier.localeCompare("undefined")==0){
+                if(entier.length==8){ //8 si entier
                     nb8 = Number(entierAleatoire(minimumIntervalle, maximumIntervalle));
                 }
                 else{
@@ -1109,7 +1269,7 @@ function calculSuivant(minimumIntervalle, maximumIntervalle) { //La fonction cal
     }
 };
 
-calculSuivant(minimumIntervalle, maximumIntervalle); //On appelle la fonction calcul suivant
+calculSuivant(minimumIntervalle, maximumIntervalle, op, combienDeNombres , entier , soustractionPositive ); //On appelle la fonction calcul suivant
 
 var boutonAntitriche = document.getElementById("check"); //On définit la variable bouton Antitriche qui ne s'active que quand le bouton check a été cliqué
 boutonAntitriche.addEventListener("click", function vaEtVient() { //Quand on clique sur le bouton check on affiche clic on déclenche la variable boutonAntitriche ce qui déclenche la fonction vaEtVient. Flash spécial, click est un évènement!
@@ -1157,7 +1317,7 @@ function entreeToCheck() {
                         }
                     break;
                     case 3:
-                        if (nb1 + nb2 + nb3 == document.getElementById("texte").value) // Si nb1+nb2 est bien le bon résultat
+                        if (nb1 + nb2 + nb3 == document.getElementById("texte").value) // Si nb1+nb2+nb3 est bien le bon résultat
                         {
                             document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                             calculScore(); // On appelle la fonction score
@@ -1173,7 +1333,7 @@ function entreeToCheck() {
                         }
                     break;
                     case 4:
-                        if (nb1 + nb2 + nb3  + nb4 == document.getElementById("texte").value) // Si nb1+nb2 est bien le bon résultat
+                        if (nb1 + nb2 + nb3  + nb4 == document.getElementById("texte").value) // Si nb1+nb2+nb3+nb4 est bien le bon résultat
                         {
                             document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                             calculScore(); // On appelle la fonction score
@@ -1190,7 +1350,7 @@ function entreeToCheck() {
 
                     break;
                     case 5:
-                        if (nb1 + nb2 + nb3 + nb4 + nb5 == document.getElementById("texte").value) // Si nb1+nb2 est bien le bon résultat
+                        if (nb1 + nb2 + nb3 + nb4 + nb5 == document.getElementById("texte").value) // Si nb1+nb2+nb3+nb4+nb5 est bien le bon résultat
                         {
                             document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                             calculScore(); // On appelle la fonction score
@@ -1207,7 +1367,7 @@ function entreeToCheck() {
 
                     break;
                     case 6:
-                        if (nb1 + nb2 + nb3 + nb4 + nb5 + nb6 == document.getElementById("texte").value) // Si nb1+nb2 est bien le bon résultat
+                        if (nb1 + nb2 + nb3 + nb4 + nb5 + nb6 == document.getElementById("texte").value) // Si nb1+nb2+nb3+nb4+nb5+nb6 est bien le bon résultat
                         {
                             document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                             calculScore(); // On appelle la fonction score
@@ -1224,7 +1384,7 @@ function entreeToCheck() {
 
                     break;
                     case 7:
-                        if (nb1 + nb2 + nb3 + nb4 + nb5 + nb6 + nb7 == document.getElementById("texte").value) // Si nb1+nb2 est bien le bon résultat
+                        if (nb1 + nb2 + nb3 + nb4 + nb5 + nb6 + nb7 == document.getElementById("texte").value) // Si nb1+nb2+nb3+nb4+nb5+nb6+nb7 est bien le bon résultat
                         {
                             document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                             calculScore(); // On appelle la fonction score
@@ -1241,7 +1401,7 @@ function entreeToCheck() {
 
                     break;
                     case 8:
-                        if (nb1 + nb2 + nb3 + nb4 + nb5 + nb6 + nb7 + nb8 == document.getElementById("texte").value) // Si nb1+nb2 est bien le bon résultat
+                        if (nb1 + nb2 + nb3 + nb4 + nb5 + nb6 + nb7 + nb8 == document.getElementById("texte").value) // Si nb1+nb2+nb3+nb4+nb5+nb6+nb7+nb8 est bien le bon résultat
                         {
                             document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                             calculScore(); // On appelle la fonction score
@@ -1258,7 +1418,7 @@ function entreeToCheck() {
 
                     break;
                     case 9:
-                        if (nb1 + nb2 + nb3 + nb4 + nb5 + nb6 + nb7 + nb8 + nb9 == document.getElementById("texte").value) // Si nb1+nb2 est bien le bon résultat
+                        if (nb1 + nb2 + nb3 + nb4 + nb5 + nb6 + nb7 + nb8 + nb9 == document.getElementById("texte").value) // Si nb1+nb2+nb3+nb4+nb5+nb6+nb7+nb8+nb9 est bien le bon résultat
                         {
                             document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                             calculScore(); // On appelle la fonction score
@@ -1281,7 +1441,7 @@ function entreeToCheck() {
                 switch(combienDeNombres){
                     case 2:
 
-                        if (nb1 - nb2 == document.getElementById("texte").value) // Si nb1+nb2 est bien le bon résultat
+                        if (nb1 - nb2 == document.getElementById("texte").value) // Si nb1-nb2 est bien le bon résultat
                         {
                             document.getElementById("reponse").textContent = "vrai"; //On lui affiche vrai
                             calculScore(); // On appelle la fonction score
@@ -1877,7 +2037,7 @@ function entreeToCheck() {
     }
 
     if (nbEnter > 1) {
-        calculSuivant(minimumIntervalle, maximumIntervalle);
+        calculSuivant(minimumIntervalle, maximumIntervalle, op, combienDeNombres , entier , soustractionPositive );
         nbEnter = 0;
     }
 
